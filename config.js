@@ -1,8 +1,8 @@
 // SUPABASE CONFIGURATION
 // Obtén estos valores de: supabase.com → tu proyecto → Settings → API
 
-const SUPABASE_URL = 'https://XXXXX.supabase.co'; // CAMBIA ESTO
-const SUPABASE_ANON_KEY = 'eyJhbGci...'; // CAMBIA ESTO
+const SUPABASE_URL = 'https://jnhrcvnfanyggmvbpijk.supabase.co'; // CAMBIA ESTO
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpuaHJjdm5mYW55Z2dtdmJwaWprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NjIyMTEsImV4cCI6MjA3NTMzODIxMX0.eRrxp-anXV7kVamdJeco0QB_DOu-F20xtct66xboRS0'; // CAMBIA ESTO
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
