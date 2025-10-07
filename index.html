@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0147)file:///private/var/folders/c3/drp7t6pj3s9_k5mk2pzzbmjr0000gn/T/remote-file-preview-E258FD49-3D55-44D8-84FF-EBA6A5692457/cve_sd_system_updated.html -->
-<html lang="en" data-theme="light" style="--card: #ffffff; --card-hover: #f1f5f9; --text: #374151; --muted: #6b7280; --border: rgba(0,0,0,0.1); --modal-bg: #ffffff; --modal-text: #374151; --bg-dark-primary: #f7f9fc; --bg-dark-secondary: #e8edf5; --button-gradient-start: #4A90E2; --button-gradient-end: #357ABD; --gradient: linear-gradient(135deg, #4A90E2, #357ABD); --accent: #36bf6a; --module-border-color: #ff6b6b; --modal-border-color: #ff6b6b;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en" data-theme="light" style="--card: #ffffff; --card-hover: #f1f5f9; --text: #374151; --muted: #6b7280; --border: rgba(0,0,0,0.1); --modal-bg: #ffffff; --modal-text: #374151; --bg-dark-primary: #f7f9fc; --bg-dark-secondary: #e8edf5; --button-gradient-start: #4A90E2; --button-gradient-end: #357ABD; --gradient: linear-gradient(135deg, #4A90E2, #357ABD); --accent: #36bf6a; --module-border-color: #ff6b6b; --modal-border-color: #ff6b6b;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opsis TimeSync â€“ Annual Management</title>
+    <title>Opsis TimeSync – Annual Management</title>
+    
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    
     <style>
         /* Import Inter font from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -515,7 +520,7 @@
             position: relative;
         }
         .nav-logo::after {
-            content: 'â—‰';
+            content: '◉';
             font-size: 24px;
             color: white;
             animation: winkEye 4s ease-in-out infinite;
@@ -1201,19 +1206,19 @@
     <!-- Sidebar navigation -->
     <div class="sidebar">
         <!-- The logo has been moved to the top left of the header; no separate logo in the sidebar -->
-        <div class="nav-icon active" data-page="dashboard" title="Dashboard" onclick="switchPage(&#39;dashboard&#39;)">ðŸ“Š</div>
-        <div class="nav-icon" data-page="schedule" title="Schedule" onclick="switchPage(&#39;schedule&#39;)">ðŸ“</div>
-        <div class="nav-icon" data-page="staff" title="Staff" onclick="switchPage(&#39;staff&#39;)">ðŸ‘¥</div>
-        <div class="nav-icon" data-page="reports" title="Reports" onclick="switchPage(&#39;reports&#39;)">ðŸ“ˆ</div>
-        <div class="nav-icon" data-page="users" title="Users" onclick="switchPage(&#39;users&#39;)">ðŸ‘¤</div>
-        <div class="nav-icon" data-page="settings" title="Settings" onclick="switchPage(&#39;settings&#39;)">âš™ï¸</div>
+        <div class="nav-icon active" data-page="dashboard" title="Dashboard" onclick="switchPage('dashboard')">📊</div>
+        <div class="nav-icon" data-page="schedule" title="Schedule" onclick="switchPage('schedule')">📅</div>
+        <div class="nav-icon" data-page="staff" title="Staff" onclick="switchPage('staff')">👥</div>
+        <div class="nav-icon" data-page="reports" title="Reports" onclick="switchPage('reports')">📈</div>
+        <div class="nav-icon" data-page="users" title="Users" onclick="switchPage('users')">👤</div>
+        <div class="nav-icon" data-page="settings" title="Settings" onclick="switchPage('settings')">⚙️</div>
     </div>
     <!-- Main content -->
     <div class="main">
         <header class="header">
             <div class="header-left">
                 <!-- Animated Opsis logo anchored to the dashboard -->
-                <a href="file:///private/var/folders/c3/drp7t6pj3s9_k5mk2pzzbmjr0000gn/T/remote-file-preview-E258FD49-3D55-44D8-84FF-EBA6A5692457/cve_sd_system_updated.html#" onclick="switchPage(&#39;dashboard&#39;)" title="Dashboard" class="header-logo">
+                <a href="#" onclick="switchPage('dashboard')" title="Dashboard" class="header-logo">
                     <div class="nav-logo-container">
                         <div class="nav-logo"></div>
                     </div>
@@ -1224,7 +1229,7 @@
                     <span id="companyNameDisplay" class="company-name">CVE San Diego</span>
                 </div>
             </div>
-            <div class="status" id="connectionIndicator">ðŸ“Š Disconnected</div>
+            <div class="status" id="connectionIndicator">🔊 Disconnected</div>
         </header>
         <!-- Dashboard Page -->
         <div id="dashboard" class="content active">
@@ -1274,24 +1279,24 @@
             <div class="page-body" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
                 <!-- Tabs within Schedule -->
                 <div class="tabs">
-                    <button class="tab-btn active" data-subtab="jobs" onclick="switchSubtab(&#39;schedule&#39;,&#39;jobs&#39;)">Schedule</button>
-                    <button class="tab-btn" data-subtab="columns" onclick="switchSubtab(&#39;schedule&#39;,&#39;columns&#39;)">Column Manager</button>
-                    <button class="tab-btn" data-subtab="filters" onclick="switchSubtab(&#39;schedule&#39;,&#39;filters&#39;)">Filters</button>
+                    <button class="tab-btn active" data-subtab="jobs" onclick="switchSubtab('schedule','jobs')">Schedule</button>
+                    <button class="tab-btn" data-subtab="columns" onclick="switchSubtab('schedule','columns')">Column Manager</button>
+                    <button class="tab-btn" data-subtab="filters" onclick="switchSubtab('schedule','filters')">Filters</button>
                 </div>
                 <!-- Subtab: Jobs -->
                 <div id="jobs" class="subtab-content" style="flex:1; display: flex; flex-direction: column;">
                     <!-- Actions Bar -->
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                         <div>
-                            <button class="btn primary" id="btnAddJob" onclick="openAddJobModal()">âž• Add Job</button>
-                            <button class="btn" id="btnAdvancedFilters" onclick="openScheduleFilters()">ðŸ“Š Filters</button>
-                            <button class="btn" id="btnRefresh" onclick="refreshPage()">â†» Refresh</button>
-                            <button class="btn" id="btnExport" onclick="exportSchedule()">ðŸ“¥ Export CSV</button>
+                            <button class="btn primary" id="btnAddJob" onclick="openAddJobModal()">➕ Add Job</button>
+                            <button class="btn" id="btnAdvancedFilters" onclick="openScheduleFilters()">🔊 Filters</button>
+                            <button class="btn" id="btnRefresh" onclick="refreshPage()">↻ Refresh</button>
+                            <button class="btn" id="btnExport" onclick="exportSchedule()">📥 Export CSV</button>
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <label for="yearSelect">Year:</label>
                             <select id="yearSelect" class="form-control" style="padding:4px 8px;">
-                                <option value="2025" selected="">2025</option>
+                                <option value="2025" selected>2025</option>
                                 <option value="2026">2026</option>
                                 <option value="2027">2027</option>
                             </select>
@@ -1305,7 +1310,7 @@
                                 <option value="June">June</option>
                                 <option value="July">July</option>
                                 <option value="August">August</option>
-                                <option value="September" selected="">September</option>
+                                <option value="September" selected>September</option>
                                 <option value="October">October</option>
                                 <option value="November">November</option>
                                 <option value="December">December</option>
@@ -1327,11 +1332,11 @@
                         </div>
                         <div class="card calendar-card">
                             <div class="calendar-header">
-                                <button id="prevMonth">â—€</button>
+                                <button id="prevMonth">◀</button>
                                 <span id="calendarMonth">September 2025</span>
-                                <button id="nextMonth">â–¶</button>
+                                <button id="nextMonth">▶</button>
                             </div>
-                            <div id="miniCalendar" class="calendar-grid"><div class="day-header">S</div><div class="day-header">M</div><div class="day-header">T</div><div class="day-header">W</div><div class="day-header">T</div><div class="day-header">F</div><div class="day-header">S</div><div class="day other-month"></div><div class="day" data-date="2025-09-01">1</div><div class="day" data-date="2025-09-02">2</div><div class="day" data-date="2025-09-03">3</div><div class="day" data-date="2025-09-04">4</div><div class="day" data-date="2025-09-05">5</div><div class="day" data-date="2025-09-06">6</div><div class="day" data-date="2025-09-07">7</div><div class="day" data-date="2025-09-08">8</div><div class="day" data-date="2025-09-09">9</div><div class="day" data-date="2025-09-10">10</div><div class="day" data-date="2025-09-11">11</div><div class="day" data-date="2025-09-12">12</div><div class="day" data-date="2025-09-13">13</div><div class="day" data-date="2025-09-14">14</div><div class="day" data-date="2025-09-15">15</div><div class="day" data-date="2025-09-16">16</div><div class="day" data-date="2025-09-17">17</div><div class="day" data-date="2025-09-18">18</div><div class="day" data-date="2025-09-19">19</div><div class="day" data-date="2025-09-20">20</div><div class="day" data-date="2025-09-21">21</div><div class="day" data-date="2025-09-22">22</div><div class="day" data-date="2025-09-23">23</div><div class="day" data-date="2025-09-24">24</div><div class="day" data-date="2025-09-25">25</div><div class="day" data-date="2025-09-26">26</div><div class="day" data-date="2025-09-27">27</div><div class="day" data-date="2025-09-28">28</div><div class="day" data-date="2025-09-29">29</div><div class="day" data-date="2025-09-30">30</div><div class="day other-month"></div><div class="day other-month"></div><div class="day other-month"></div><div class="day other-month"></div></div>
+                            <div id="miniCalendar" class="calendar-grid"></div>
                             <div style="margin-top: 6px; font-size: 10px; color:#6b7280; text-align: center;">Select a date</div>
                         </div>
                         <div class="card stats-card">
@@ -1411,9 +1416,9 @@
     <div id="rowActionsCard" class="card row-actions-card" style="width:240px;">
         <h3>Row Actions</h3>
         <div id="selectedJobInfo" style="font-size:11px; color:#6b7280; margin-bottom:8px;">Select a row</div>
-        <button class="btn small primary" id="btnEditRow" disabled="">Edit</button>
-        <button class="btn small" id="btnDuplicateRow" disabled="">Duplicate</button>
-        <button class="btn small danger" id="btnDeleteRow" disabled="">Delete</button>
+        <button class="btn small primary" id="btnEditRow" disabled>Edit</button>
+        <button class="btn small" id="btnDuplicateRow" disabled>Duplicate</button>
+        <button class="btn small danger" id="btnDeleteRow" disabled>Delete</button>
         <div style="font-size: 10px; color:#374151; margin-top:8px;">Log</div>
         <div id="operationsLog" style="max-height:120px; overflow:auto; font-size:10px; color:#6b7280;"></div>
     </div>
@@ -1424,17 +1429,17 @@
     <div class="modal-dialog" style="max-width:500px;">
         <div class="modal-header">
             <h2 class="modal-title">Add User</h2>
-            <button class="close-btn" onclick="closeModal(&#39;modalUser&#39;)">Ã—</button>
+            <button class="close-btn" onclick="closeModal('modalUser')">×</button>
         </div>
         <div class="modal-body">
             <form id="formUser">
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" id="userUsername" class="form-control" required="">
+                    <input type="text" id="userUsername" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" id="userPassword" class="form-control" required="">
+                    <input type="password" id="userPassword" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Role</label>
@@ -1454,7 +1459,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button class="btn" onclick="closeModal(&#39;modalUser&#39;)">Cancel</button>
+            <button class="btn" onclick="closeModal('modalUser')">Cancel</button>
             <button class="btn primary" id="btnSaveUser" onclick="saveUser()" data-bound="1">Save User</button>
         </div>
     </div>
@@ -1470,8 +1475,8 @@
                                 Configure visibility, widths, and options for each column. Changes are stored locally and can be synced with the sheet.
                             </div>
                             <div style="margin-bottom: 8px;">
-                                <button class="btn" id="btnAddColumn">âž• Add Column</button>
-                                <button class="btn" id="btnSaveColumns">ðŸ’¾ Save All</button>
+                                <button class="btn" id="btnAddColumn">➕ Add Column</button>
+                                <button class="btn" id="btnSaveColumns">💾 Save All</button>
                             </div>
                             <table style="width:100%; border-collapse:collapse; font-size:11px;">
                                 <thead>
@@ -1574,11 +1579,11 @@
             <div class="page-body" style="padding: 24px; display:flex; flex-direction:column; height: 100%;">
                 <!-- Staff Tabs -->
                 <div class="tabs">
-                    <button class="tab-btn active" data-stafftab="overview" onclick="switchSubtab(&#39;staff&#39;,&#39;overview&#39;)">Overview</button>
-                    <button class="tab-btn" data-stafftab="supervisors" onclick="switchSubtab(&#39;staff&#39;,&#39;supervisors&#39;)">Supervisors</button>
-                    <button class="tab-btn" data-stafftab="crew" onclick="switchSubtab(&#39;staff&#39;,&#39;crew&#39;)">Crew Members</button>
-                    <button class="tab-btn" data-stafftab="skills" onclick="switchSubtab(&#39;staff&#39;,&#39;skills&#39;)">Skills Matrix</button>
-                    <button class="tab-btn" data-stafftab="certifications" onclick="switchSubtab(&#39;staff&#39;,&#39;certifications&#39;)">Certifications</button>
+                    <button class="tab-btn active" data-stafftab="overview" onclick="switchSubtab('staff','overview')">Overview</button>
+                    <button class="tab-btn" data-stafftab="supervisors" onclick="switchSubtab('staff','supervisors')">Supervisors</button>
+                    <button class="tab-btn" data-stafftab="crew" onclick="switchSubtab('staff','crew')">Crew Members</button>
+                    <button class="tab-btn" data-stafftab="skills" onclick="switchSubtab('staff','skills')">Skills Matrix</button>
+                    <button class="tab-btn" data-stafftab="certifications" onclick="switchSubtab('staff','certifications')">Certifications</button>
                 </div>
                 <!-- Staff content areas -->
                 <div id="overview" class="staff-content" style="flex:1; overflow:auto;">
@@ -1613,7 +1618,7 @@
                 <div id="supervisors" class="staff-content" style="display:none; flex:1; overflow:auto;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
                         <h2 style="font-size:18px; font-weight:600;">Supervisors</h2>
-                        <button class="btn primary" id="btnAddSupervisor">âž• Add Supervisor</button>
+                        <button class="btn primary" id="btnAddSupervisor">➕ Add Supervisor</button>
                     </div>
                     <div class="table-container" style="flex:1;">
                         <div class="table-header">Supervisors List</div>
@@ -1640,7 +1645,7 @@
                 <div id="crew" class="staff-content" style="display:none; flex:1; overflow:auto;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
                         <h2 style="font-size:18px; font-weight:600;">Crew Members</h2>
-                        <button class="btn primary" id="btnAddCrew">âž• Add Crew</button>
+                        <button class="btn primary" id="btnAddCrew">➕ Add Crew</button>
                     </div>
                     <div class="table-container" style="flex:1;">
                         <div class="table-header">Crew List</div>
@@ -1667,7 +1672,7 @@
                 <div id="skills" class="staff-content" style="display:none; flex:1; overflow:auto;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
                         <h2 style="font-size:18px; font-weight:600;">Skills Matrix</h2>
-                        <button class="btn primary" id="btnAddSkill">âž• Add Skill</button>
+                        <button class="btn primary" id="btnAddSkill">➕ Add Skill</button>
                     </div>
                     <div style="overflow-x:auto;">
                         <div id="skillsMatrixBody">Loading skills matrix...</div>
@@ -1676,7 +1681,7 @@
                 <div id="certifications" class="staff-content" style="display:none; flex:1; overflow:auto;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
                         <h2 style="font-size:18px; font-weight:600;">Certifications</h2>
-                        <button class="btn primary" id="btnAddCertification">âž• Add Certification</button>
+                        <button class="btn primary" id="btnAddCertification">➕ Add Certification</button>
                     </div>
                     <!-- Metrics for certifications: expiring soon, critical, active -->
                     <div id="certMetrics" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;"></div>
@@ -1700,7 +1705,7 @@
                         <select id="reportPeriod">
                             <option value="today">Today</option>
                             <option value="week">This Week</option>
-                            <option value="month" selected="">This Month</option>
+                            <option value="month" selected>This Month</option>
                             <option value="custom">Custom</option>
                         </select>
                         <input type="date" id="reportFrom" style="display:none;">
@@ -1785,7 +1790,7 @@
                         <div id="weeklySummary"></div>
                     </div>
                     <div class="report-panel" id="alertsPanel">
-                        <h3>Alerts &amp; Notifications</h3>
+                        <h3>Alerts & Notifications</h3>
                         <div id="alertsList"></div>
                     </div>
                 </div>
@@ -1818,7 +1823,7 @@
                     <div style="display:flex; justify-content:space-between; align-items:center;">
                         <h3 style="font-size:16px; font-weight:600;">Users</h3>
                         <!-- Call modal directly to ensure it always opens -->
-                        <button type="button" class="btn primary" id="btnAddUser" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById(&#39;modalUser&#39;).classList.add(&#39;show&#39;)" data-bound="1">âž• Add User</button>
+                        <button type="button" class="btn primary" id="btnAddUser" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('modalUser').classList.add('show')" data-bound="1">➕ Add User</button>
                     </div>
                     <div id="usersTableContainer" style="margin-top:16px; overflow-x:auto;"></div>
                 </div>
@@ -1846,25 +1851,17 @@
                 <div id="api" class="settings-content" style="display:none; margin-top:12px;">
                     <div class="card" style="max-width:500px; margin-bottom:16px;">
                         <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">API Configuration</h3>
+                        <p style="font-size:12px; color:#6b7280; margin-bottom:12px;">
+                            This system now uses Supabase. Configure your credentials in <code>config.js</code>.
+                        </p>
                         <div class="form-group">
-                            <label>Google Apps Script URL</label>
-                            <input type="text" id="gasUrl" class="form-control" placeholder="https://script.google.com/macros/s/...">
+                            <label>Supabase Project URL</label>
+                            <input type="text" class="form-control" placeholder="https://xxxxx.supabase.co" readonly style="background:#f3f4f6;">
                         </div>
                         <div class="form-group">
-                            <label>Spreadsheet ID</label>
-                            <input type="text" class="form-control" value="1ZZhv7DSFR1EfvC8Urz3JTUiIYQ5lViDyZe9QB0sl1o8" readonly="">
-                        </div>
-                        <div style="margin-top:16px; display:flex; gap:8px;">
-                            <button class="btn primary" id="btnSaveApi">ðŸ’¾ Save</button>
-                            <button class="btn" id="btnTestApi">ðŸ”— Test Connection</button>
-                        </div>
-                        <div style="margin-top:20px; padding:16px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:6px;">
-                            <div style="font-size:12px; font-weight:600; color:#1e40af; margin-bottom:6px;">Initialize Sheets</div>
-                            <div style="font-size:11px; color:#1e3a8a; margin-bottom:8px;">Initialize annual sheets with the correct structure.</div>
-                            <div style="display:flex; gap:4px;">
-                                <button class="btn small primary" data-year="2025">Init 2025</button>
-                                <button class="btn small primary" data-year="2026">Init 2026</button>
-                                <button class="btn small primary" data-year="2027">Init 2027</button>
+                            <label>Status</label>
+                            <div id="apiStatus" style="padding:8px; border-radius:4px; background:#ecfdf5; color:#065f46; font-size:12px;">
+                                Check browser console for connection status
                             </div>
                         </div>
                     </div>
@@ -1872,49 +1869,25 @@
                 <!-- Spreadsheet Settings -->
                 <div id="spreadsheet" class="settings-content" style="display:none; margin-top:12px;">
                     <div class="card" style="max-width:600px; margin-bottom:16px;">
-                        <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Spreadsheet Setup</h3>
-                        <div class="form-group">
-                            <label>Spreadsheet ID</label>
-                            <input type="text" id="sheetId" class="form-control" placeholder="Paste Spreadsheet ID">
-                        </div>
-                        <div class="form-group">
-                            <label>Active Year</label>
-                            <select id="activeYearSelect" class="form-control">
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                            </select>
-                        </div>
-                        <div style="margin-top:16px; display:flex; gap:8px;">
-                            <button class="btn" id="btnTestSheet" data-bound="1">ðŸ”— Test Connection</button>
-                            <button class="btn" id="btnEnsureYear" data-bound="1">âž• Init Year</button>
-                            <button class="btn" id="btnSwitchYear" data-bound="1">ðŸ“… Set Active Year</button>
-                        </div>
-                        <p id="sheetStatus" style="font-size:12px; color:var(--muted); margin-top:8px;"></p>
+                        <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Database Information</h3>
+                        <p style="font-size:12px; color:#6b7280;">
+                            This system uses Supabase for data storage. No spreadsheet configuration needed.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Schema Settings -->
                 <div id="schema" class="settings-content" style="display:none; margin-top:12px;">
                     <div class="card" style="max-width:650px; margin-bottom:16px;">
-                        <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Schema Mapping</h3>
-                        <div class="form-group">
-                            <label>Jobs Sheet</label>
-                            <input type="text" id="jobsSheetName" class="form-control" placeholder="Jobs_2025">
-                        </div>
-                        <div style="margin-top:16px; display:flex; gap:8px;">
-                            <button class="btn" id="btnReadSchema" data-bound="1">ðŸ“„ Read Schema</button>
-                            <button class="btn" id="btnAppendReserved" data-bound="1">âž• Append Reserved</button>
-                        </div>
-                        <div id="schemaForm" style="margin-top:16px;"></div>
-                        <div style="margin-top:16px;">
-                            <button class="btn primary" id="btnSaveSchema" data-bound="1">ðŸ’¾ Save Mapping</button>
-                        </div>
+                        <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Schema Information</h3>
+                        <p style="font-size:12px; color:#6b7280;">
+                            Schema is managed in Supabase SQL Editor. Use the provided SQL scripts to set up tables.
+                        </p>
                     </div>
                 </div>
             <div id="appearance" class="settings-content" style="display:none; margin-top:12px;" data-moved="1">
             <div class="card" style="max-width:600px; margin-bottom:16px;">
-                <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Appearance &amp; Theme</h3>
+                <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Appearance & Theme</h3>
                 <div class="form-group">
                     <label>Theme Mode</label>
                     <select id="themeSelect" class="form-control" data-bound="1">
@@ -1924,7 +1897,7 @@
                     </select>
                 </div>
                 <!-- Simplified appearance settings: choose theme mode only -->
-                <p style="margin-top:12px; font-size:0.85rem; color: var(--muted);">Modal and module borders automatically use the logoâ€™s colours. In light mode, backgrounds are light with dark text; in dark mode, backgrounds are dark with light text.</p>
+                <p style="margin-top:12px; font-size:0.85rem; color: var(--muted);">Modal and module borders automatically use the logo's colours. In light mode, backgrounds are light with dark text; in dark mode, backgrounds are dark with light text.</p>
             </div>
         </div></div>
         </div>
@@ -1939,7 +1912,7 @@
     <div class="modal-dialog">
         <div class="modal-header">
             <h2 class="modal-title">Add New Job</h2>
-            <button class="close-btn" data-close="modalAddJob">Ã—</button>
+            <button class="close-btn" data-close="modalAddJob">×</button>
         </div>
         <div class="modal-body">
             <!-- Job form with tabs -->
@@ -1956,7 +1929,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Job Number <span class="required">*</span></label>
-                            <input type="text" name="Job_Number" class="form-control" required="">
+                            <input type="text" name="Job_Number" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Status</label>
@@ -1965,13 +1938,13 @@
                                 <option>REPAIR</option>
                                 <option>TEARDOWN</option>
                                 <option>PICK UP EQ</option>
-                                <option>TD &amp; EQ</option>
+                                <option>TD & EQ</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Job Address <span class="required">*</span></label>
-                        <input type="text" name="Job_Address" class="form-control" required="">
+                        <input type="text" name="Job_Address" class="form-control" required>
                     </div>
                 </div>
                 <!-- Schedule -->
@@ -1979,7 +1952,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Date <span class="required">*</span></label>
-                            <input type="date" name="Date" class="form-control" required="">
+                            <input type="date" name="Date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Time</label>
@@ -2095,7 +2068,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button class="btn" data-close="modalAddJob" onclick="closeModal(&#39;modalAddJob&#39;)">Cancel</button>
+            <button class="btn" data-close="modalAddJob" onclick="closeModal('modalAddJob')">Cancel</button>
             <button class="btn primary" id="btnSaveJob">Save</button>
         </div>
     </div>
@@ -2105,14 +2078,14 @@
     <div class="modal-dialog" style="max-width:600px;">
         <div class="modal-header">
             <h2 class="modal-title">Add Supervisor</h2>
-            <button class="close-btn" data-close="modalAddSupervisor">Ã—</button>
+            <button class="close-btn" data-close="modalAddSupervisor">×</button>
         </div>
         <div class="modal-body">
             <form id="formAddSupervisor">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Employee # <span class="required">*</span></label>
-                        <input type="text" name="employeeNumber" class="form-control" required="">
+                        <input type="text" name="employeeNumber" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Status</label>
@@ -2126,12 +2099,12 @@
                 </div>
                 <div class="form-group">
                     <label>Full Name <span class="required">*</span></label>
-                    <input type="text" name="fullName" class="form-control" required="">
+                    <input type="text" name="fullName" class="form-control" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Role</label>
-                        <input type="text" name="role" class="form-control" value="SUPERVISOR" readonly="" style="background:#f3f4f6;">
+                        <input type="text" name="role" class="form-control" value="SUPERVISOR" readonly style="background:#f3f4f6;">
                     </div>
                     <div class="form-group">
                         <label>Division</label>
@@ -2147,7 +2120,7 @@
                 </div>
                 <div class="form-group">
                     <label>Specialties (Ctrl/Cmd to select)</label>
-                    <select name="specialties" class="form-control" multiple="" style="height:100px;">
+                    <select name="specialties" class="form-control" multiple style="height:100px;">
                         <option value="Asbestos">Asbestos</option>
                         <option value="Lead Paint">Lead Paint</option>
                         <option value="Mold">Mold</option>
@@ -2171,14 +2144,14 @@
     <div class="modal-dialog" style="max-width:600px;">
         <div class="modal-header">
             <h2 class="modal-title">Add Crew Member</h2>
-            <button class="close-btn" data-close="modalAddCrew">Ã—</button>
+            <button class="close-btn" data-close="modalAddCrew">×</button>
         </div>
         <div class="modal-body">
             <form id="formAddCrew">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Employee # <span class="required">*</span></label>
-                        <input type="text" name="employeeNumber" class="form-control" required="">
+                        <input type="text" name="employeeNumber" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Status</label>
@@ -2192,12 +2165,12 @@
                 </div>
                 <div class="form-group">
                     <label>Full Name <span class="required">*</span></label>
-                    <input type="text" name="fullName" class="form-control" required="">
+                    <input type="text" name="fullName" class="form-control" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Role</label>
-                        <input type="text" name="role" class="form-control" value="CREW" readonly="" style="background:#f3f4f6;">
+                        <input type="text" name="role" class="form-control" value="CREW" readonly style="background:#f3f4f6;">
                     </div>
                     <div class="form-group">
                         <label>Division</label>
@@ -2213,7 +2186,7 @@
                 </div>
                 <div class="form-group">
                     <label>Specialties (Ctrl/Cmd to select)</label>
-                    <select name="specialties" class="form-control" multiple="" style="height:100px;">
+                    <select name="specialties" class="form-control" multiple style="height:100px;">
                         <option value="Asbestos">Asbestos</option>
                         <option value="Lead Paint">Lead Paint</option>
                         <option value="Mold">Mold</option>
@@ -2237,7 +2210,7 @@
     <div class="modal-dialog" style="max-width:500px;">
         <div class="modal-header">
             <h2 class="modal-title">Add New Skill</h2>
-            <button class="close-btn" data-close="modalAddSkill">Ã—</button>
+            <button class="close-btn" data-close="modalAddSkill">×</button>
         </div>
         <div class="modal-body">
             <div class="form-group">
@@ -2268,19 +2241,19 @@
     <div class="modal-dialog" style="max-width:500px;">
         <div class="modal-header">
             <h2 class="modal-title">Add Certification</h2>
-            <button class="close-btn" data-close="modalAddCertification">Ã—</button>
+            <button class="close-btn" data-close="modalAddCertification">×</button>
         </div>
         <div class="modal-body">
             <form id="formAddCertification">
                 <div class="form-group">
                     <label>Employee <span class="required">*</span></label>
-                    <select name="employee" id="certificationEmployee" class="form-control" required="">
+                    <select name="employee" id="certificationEmployee" class="form-control" required>
                         <option value="">Select Employee</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Certification Type <span class="required">*</span></label>
-                    <select name="certificationType" class="form-control" required="">
+                    <select name="certificationType" class="form-control" required>
                         <option value="">Select</option>
                         <option value="ASBESTOS_CERT">Asbestos Certification</option>
                         <option value="LEAD_CERT">Lead Paint Certification</option>
@@ -2298,11 +2271,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Issue Date <span class="required">*</span></label>
-                        <input type="date" name="issueDate" class="form-control" required="">
+                        <input type="date" name="issueDate" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Expiry Date <span class="required">*</span></label>
-                        <input type="date" name="expiryDate" class="form-control" required="">
+                        <input type="date" name="expiryDate" class="form-control" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -2331,7 +2304,7 @@
     <div class="modal-dialog" style="max-width:700px;">
         <div class="modal-header">
             <h2 class="modal-title">Edit Column</h2>
-            <button class="close-btn" data-close="modalEditColumn">Ã—</button>
+            <button class="close-btn" data-close="modalEditColumn">×</button>
         </div>
         <div class="modal-body">
             <form id="formEditColumn">
@@ -2340,7 +2313,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Column Name <span class="required">*</span></label>
-                        <input type="text" id="editColumnName" class="form-control" required="">
+                        <input type="text" id="editColumnName" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Type <span class="required">*</span></label>
@@ -2393,7 +2366,7 @@
     <div class="modal-dialog" style="max-width:500px;">
         <div class="modal-header">
             <h2 class="modal-title">Add Column</h2>
-            <button class="close-btn" data-close="modalAddColumn">Ã—</button>
+            <button class="close-btn" data-close="modalAddColumn">×</button>
         </div>
         <div class="modal-body">
             <div class="form-group">
@@ -2450,18 +2423,18 @@ Option 3"></textarea>
     <div class="modal-dialog" style="max-width:600px;">
         <div class="modal-header">
             <h2 class="modal-title">Certification Details</h2>
-            <button class="close-btn" data-close="modalEditCertification">Ã—</button>
+            <button class="close-btn" data-close="modalEditCertification">×</button>
         </div>
         <div class="modal-body">
             <form id="formEditCertification">
                 <input type="hidden" name="certId">
                 <div class="form-group">
                     <label>Employee</label>
-                    <input type="text" name="employeeName" class="form-control" readonly="">
+                    <input type="text" name="employeeName" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <label>Certification Type</label>
-                    <input type="text" name="certificationType" class="form-control" readonly="">
+                    <input type="text" name="certificationType" class="form-control" readonly>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
@@ -2535,7 +2508,7 @@ Option 3"></textarea>
     // (operationLogs, editingRowId and editingRowIndex are declared above)
     let columns = [];
     let staffData = { supervisors: [], crew: [], skills: [], certs: [] };
-    let gasUrl = '';
+    let gasUrl = ''; // No longer used with Supabase
     let viewMode = 'complete';
     let columnConfigLoaded = false;
 
@@ -2632,14 +2605,13 @@ Option 3"></textarea>
         const container = document.getElementById('notificationContainer');
         const notif = document.createElement('div');
         notif.className = `notification ${type}`;
-        const icons = {success:'âœ“',error:'âœ—',info:'â„¹',warning:'âš '};
+        const icons = {success:'✓',error:'✗',info:'ℹ',warning:'⚠ '};
         notif.innerHTML = `<span>${icons[type]}</span><span>${message}</span>`;
         container.appendChild(notif);
         setTimeout(() => notif.remove(), 3500);
     }
 
     function saveLocalConfig() {
-        localStorage.setItem('cve_gasUrl', gasUrl);
         localStorage.setItem('cve_columns', JSON.stringify(columns));
         // Save Opsis data
         localStorage.setItem('opsis_sheetId', opsisSheetId || '');
@@ -2654,12 +2626,6 @@ Option 3"></textarea>
         localStorage.setItem('opsis_theme', currentTheme);
     }
     function loadLocalConfig() {
-        const savedUrl = localStorage.getItem('cve_gasUrl');
-        if (savedUrl) {
-            gasUrl = savedUrl;
-            $('#gasUrl').value = savedUrl;
-            updateConnectionIndicator();
-        }
         const savedCols = localStorage.getItem('cve_columns');
         if (savedCols) {
             try {
@@ -2673,14 +2639,10 @@ Option 3"></textarea>
         const savedSheet = localStorage.getItem('opsis_sheetId');
         if (savedSheet) {
             opsisSheetId = savedSheet;
-            const sheetInput = document.getElementById('sheetId');
-            if (sheetInput) sheetInput.value = savedSheet;
         }
         const savedYear = localStorage.getItem('opsis_activeYear');
         if (savedYear) {
             activeYear = parseInt(savedYear);
-            const yearSel = document.getElementById('activeYearSelect');
-            if (yearSel) yearSel.value = savedYear;
         }
         const savedToken = localStorage.getItem('opsis_token');
         const savedRole = localStorage.getItem('opsis_role');
@@ -2702,34 +2664,69 @@ Option 3"></textarea>
         applyTheme(savedTheme);
     }
 
-    // API call helper
-    async function callAPI(action, payload={}) {
-        if (!gasUrl) {
-            showNotification('Configure API URL in Settings', 'error');
-            return {success:false};
-        }
+    // API call helper - UPDATED FOR SUPABASE
+    async function callAPI(action, payload = {}) {
         try {
-            const res = await fetch(gasUrl, {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({action, ...payload})
-            });
-            const result = await res.json();
-            updateConnectionIndicator(result.success);
-            return result;
+            updateConnectionIndicator(true);
+            switch(action) {
+                case 'getJobs':
+                    return await API.getJobs(payload.year, payload.month);
+                case 'createJob':
+                    return await API.createJob(payload.job, payload.year, payload.month);
+                case 'updateJob':
+                    return await API.updateJob(payload.rowId, payload.updates, payload.year, payload.month);
+                case 'deleteJob':
+                    return await API.deleteJob(payload.rowId);
+                case 'getStaff':
+                    return await API.getStaff(payload.role);
+                case 'addStaff':
+                    return await API.addStaff(payload.type, payload.data);
+                case 'updateStaff':
+                    return await API.updateStaff(payload.employeeNumber, payload.updates);
+                case 'deleteStaff':
+                    return await API.deleteStaff(payload.employeeNumber);
+                case 'getCertifications':
+                    return await API.getCertifications();
+                case 'addCertification':
+                    return await API.addCertification(payload);
+                case 'updateCertification':
+                    return await API.updateCertification(payload.id, payload.updates);
+                case 'deleteCertification':
+                    return await API.deleteCertification(payload.id);
+                case 'getDashboardStats':
+                    return await API.getDashboardStats();
+                case 'getUsers':
+                    return await API.getUsers();
+                case 'addUser':
+                    return await API.addUser(payload);
+                case 'updateUser':
+                    return await API.updateUser(payload.username, payload.updates);
+                case 'deleteUser':
+                    return await API.deleteUser(payload.username);
+                case 'getColumnSchema':
+                    return await API.getColumnSchema();
+                case 'syncColumns':
+                    return await API.syncColumns(payload.columns);
+                case 'addColumn':
+                    return await API.addColumn(payload);
+                default:
+                    console.log('Action not implemented:', action);
+                    return { success: true, jobs: [], staff: [], certifications: [], users: [] };
+            }
         } catch(error) {
+            console.error('API Error:', error);
             updateConnectionIndicator(false);
-            return {success:false, error:error.toString()};
+            return { success: false, error: error.message };
         }
     }
 
     function updateConnectionIndicator(connected=false) {
         const indicator = document.getElementById('connectionIndicator');
         if (connected) {
-            indicator.textContent = 'ðŸ“Š Connected';
+            indicator.textContent = '🔊 Connected';
             indicator.style.color = '#10b981';
         } else {
-            indicator.textContent = 'ðŸ“Š Disconnected';
+            indicator.textContent = '🔊 Disconnected';
             indicator.style.color = '#ef4444';
         }
     }
@@ -2915,7 +2912,7 @@ Option 3"></textarea>
         }
         tableBody.innerHTML = jobs.map(job => {
             return `<tr>` + visibleCols.map(col => {
-                let value = job[col.name];
+                let value = job[col.name] || job[col.name.toLowerCase()];
                 if (value == null || value === undefined) value = '';
                 if (col.type === 'date' && value) {
                     const date = new Date(value);
@@ -2957,8 +2954,9 @@ Option 3"></textarea>
         POSITION_LIST.forEach(p => { positionCounts[p] = {day:0, week:0}; });
         // Count jobs by selected date and week and by status/position
         jobs.forEach(job => {
-            if (!job.Date) return;
-            const d = new Date(job.Date);
+            if (!job.date && !job.Date) return;
+            const dateVal = job.date || job.Date;
+            const d = new Date(dateVal);
             d.setHours(0,0,0,0);
             const isDay = d.getTime() === selected.getTime();
             const isWeek = d >= weekStart && d <= weekEnd;
@@ -3013,14 +3011,14 @@ Option 3"></textarea>
     // Append a log entry to the operations log panel
     function addOperationLog(action, jobNumber, message) {
         const now = new Date();
-        const entry = `${now.toLocaleString()} â€¢ ${action} ${jobNumber || ''} â€“ ${message}`;
+        const entry = `${now.toLocaleString()} • ${action} ${jobNumber || ''} — ${message}`;
         operationLogs.unshift(entry);
         if (operationLogs.length > 50) {
             operationLogs.pop();
         }
         const logContainer = document.getElementById('operationsLog');
         if (logContainer) {
-            logContainer.innerHTML = operationLogs.map(l => `<div class=\"log-entry\">${l}</div>`).join('');
+            logContainer.innerHTML = operationLogs.map(l => `<div class="log-entry">${l}</div>`).join('');
         }
     }
 
@@ -3029,27 +3027,29 @@ Option 3"></textarea>
         if (selectedRowIndex == null || !jobs[selectedRowIndex]) return;
         const job = jobs[selectedRowIndex];
         editingRowIndex = selectedRowIndex;
-        editingRowId = job.Row_ID || job.Row_id || job.rowId;
+        editingRowId = job.row_id || job.Row_ID || job.Row_id || job.rowId;
         // Prefill form with job data
         const form = document.getElementById('formAddJob');
         if (!form) return;
-        form.Job_Number.value = job.Job_Number || '';
-        form.Status.value = job.Status || '';
-        form.Job_Address.value = job.Job_Address || '';
-        form.Date.value = job.Date ? new Date(job.Date).toISOString().split('T')[0] : '';
-        form.Time.value = job.Time || '';
-        form.Progress.value = job.Progress || '';
-        form.Location.value = job.Location || '';
-        form.PM.value = job.PM || '';
-        form.Position.value = job.Position || '';
-        form.Supervisor.value = job.Supervisor || '';
-        form.Crew.value = job.Crew || '';
-        form.OSHA.value = job.OSHA || '';
-        form.Manifest.value = job.Manifest || '';
-        form.Notified.value = job.Notified || '';
-        form.Scheduled.value = job.Scheduled || '';
-        form.Notes.value = job.Notes || '';
-        form.Manifest_Notes.value = job.Manifest_Notes || '';
+        form.Job_Number.value = job.job_number || job.Job_Number || '';
+        form.Status.value = job.status || job.Status || '';
+        form.Job_Address.value = job.job_address || job.Job_Address || '';
+        
+        const dateVal = job.date || job.Date;
+        form.Date.value = dateVal ? new Date(dateVal).toISOString().split('T')[0] : '';
+        form.Time.value = job.time || job.Time || '';
+        form.Progress.value = job.progress || job.Progress || '';
+        form.Location.value = job.location || job.Location || '';
+        form.PM.value = job.pm || job.PM || '';
+        form.Position.value = job.position || job.Position || '';
+        form.Supervisor.value = job.supervisor || job.Supervisor || '';
+        form.Crew.value = job.crew || job.Crew || '';
+        form.OSHA.value = job.osha || job.OSHA || '';
+        form.Manifest.value = job.manifest || job.Manifest || '';
+        form.Notified.value = job.notified || job.Notified || '';
+        form.Scheduled.value = job.scheduled || job.Scheduled || '';
+        form.Notes.value = job.notes || job.Notes || '';
+        form.Manifest_Notes.value = job.manifest_notes || job.Manifest_Notes || '';
         // Show modal on basic tab
         document.getElementById('modalAddJob').classList.add('show');
         document.querySelectorAll('#modalAddJob .jobtab').forEach(c => c.style.display='none');
@@ -3070,12 +3070,12 @@ Option 3"></textarea>
         const month = $('#monthSelect').value;
         const newJob = {};
         Object.keys(original).forEach(k => {
-            if (['Row_ID','Row_id','rowId','Created_At','Modified_At','Modified_By','Active'].includes(k)) return;
+            if (['Row_ID','Row_id','rowId','row_id','id','Created_At','created_at','Modified_At','modified_at','updated_at','Modified_By','Active','active'].includes(k)) return;
             newJob[k] = original[k];
         });
         const res = await callAPI('createJob', {job:newJob, year, month, user:'System'});
         if (res.success) {
-            addOperationLog('Duplicate', original.Job_Number || '', 'Job duplicated');
+            addOperationLog('Duplicate', original.job_number || original.Job_Number || '', 'Job duplicated');
             showNotification('Job duplicated','success');
             loadSchedule();
         } else {
@@ -3087,14 +3087,14 @@ Option 3"></textarea>
     async function deleteJobRow() {
         if (selectedRowIndex == null || !jobs[selectedRowIndex]) return;
         const job = jobs[selectedRowIndex];
-        const rowId = job.Row_ID || job.Row_id || job.rowId;
+        const rowId = job.row_id || job.Row_ID || job.Row_id || job.rowId;
         if (!rowId) return;
         if (!confirm('Are you sure you want to delete this job?')) return;
         const year = parseInt($('#yearSelect').value);
         const month = $('#monthSelect').value;
         const res = await callAPI('deleteJob', {rowId, year, month, user:'System'});
         if (res.success) {
-            addOperationLog('Delete', job.Job_Number || '', 'Job deleted');
+            addOperationLog('Delete', job.job_number || job.Job_Number || '', 'Job deleted');
             showNotification('Job deleted','success');
             loadSchedule();
         } else {
@@ -3102,22 +3102,8 @@ Option 3"></textarea>
         }
     }
 
-    // Calendar stub (no date selection due to complexity)
-    function renderCalendar() {
-        const calendarDiv = document.getElementById('calendar');
-        calendarDiv.innerHTML = 'Connect API to see calendar';
-    }
-
     // Staff Data
     async function loadStaff() {
-        // Load staff overview from API (optional) and update local metrics if available
-        try {
-            const ovRes = await callAPI('getOverviewMetrics');
-            if (ovRes.success && ovRes.metrics) {
-                // We still call this for API side effects but will compute metrics locally
-            }
-        } catch(e) {}
-        // Also load supervisors and crew lists for accurate overview counts
         try {
             await loadSupervisors();
         } catch(e) {}
@@ -3137,15 +3123,23 @@ Option 3"></textarea>
                 tbody.innerHTML = `<tr><td colspan="7" class="empty">No supervisors found</td></tr>`;
             } else {
                 tbody.innerHTML = staffData.supervisors.map(s => {
-                    const specialties = Array.isArray(s.Specialties) ? s.Specialties.join(', ') : (s.Specialties || '');
+                    let specialties = s.Specialties || s.specialties || [];
+                    if (typeof specialties === 'string') {
+                        try {
+                            specialties = JSON.parse(specialties);
+                        } catch(e) {
+                            specialties = [];
+                        }
+                    }
+                    const specialtiesStr = Array.isArray(specialties) ? specialties.join(', ') : '';
                     return `<tr>
-                        <td>${s.Employee_Number || s.employeeNumber || ''}</td>
-                        <td>${s.Full_Name || s.fullName || ''}</td>
+                        <td>${s.Employee_Number || s.employee_number || ''}</td>
+                        <td>${s.Full_Name || s.full_name || ''}</td>
                         <td><span class="badge badge-info">${s.Role || s.role}</span></td>
-                        <td><span class="badge ${s.Status==='AVAILABLE'? 'badge-success':'badge-warning'}">${s.Status || s.status}</span></td>
+                        <td><span class="badge ${s.Status==='AVAILABLE'|| s.status==='AVAILABLE'? 'badge-success':'badge-warning'}">${s.Status || s.status}</span></td>
                         <td>${s.Division || s.division || ''}</td>
-                        <td>${specialties}</td>
-                        <td><button class="btn small" data-edit="supervisor" data-id="${s.Employee_Number}">Edit</button> <button class="btn small danger" data-delete="supervisor" data-id="${s.Employee_Number}">Delete</button></td>
+                        <td>${specialtiesStr}</td>
+                        <td><button class="btn small" data-edit="supervisor" data-id="${s.Employee_Number || s.employee_number}">Edit</button> <button class="btn small danger" data-delete="supervisor" data-id="${s.Employee_Number || s.employee_number}">Delete</button></td>
                     </tr>`;
                 }).join('');
             }
@@ -3163,53 +3157,29 @@ Option 3"></textarea>
                 tbody.innerHTML = `<tr><td colspan="7" class="empty">No crew members found</td></tr>`;
             } else {
                 tbody.innerHTML = staffData.crew.map(c => {
-                    const specialties = Array.isArray(c.Specialties) ? c.Specialties.join(', ') : (c.Specialties || '');
+                    let specialties = c.Specialties || c.specialties || [];
+                    if (typeof specialties === 'string') {
+                        try {
+                            specialties = JSON.parse(specialties);
+                        } catch(e) {
+                            specialties = [];
+                        }
+                    }
+                    const specialtiesStr = Array.isArray(specialties) ? specialties.join(', ') : '';
                     return `<tr>
-                        <td>${c.Employee_Number || c.employeeNumber || ''}</td>
-                        <td>${c.Full_Name || c.fullName || ''}</td>
+                        <td>${c.Employee_Number || c.employee_number || ''}</td>
+                        <td>${c.Full_Name || c.full_name || ''}</td>
                         <td><span class="badge badge-info">${c.Role || c.role}</span></td>
-                        <td><span class="badge ${c.Status==='AVAILABLE'? 'badge-success':'badge-warning'}">${c.Status || c.status}</span></td>
+                        <td><span class="badge ${c.Status==='AVAILABLE'||c.status==='AVAILABLE'? 'badge-success':'badge-warning'}">${c.Status || c.status}</span></td>
                         <td>${c.Division || c.division || ''}</td>
-                        <td>${specialties}</td>
-                        <td><button class="btn small" data-edit="crew" data-id="${c.Employee_Number}">Edit</button> <button class="btn small danger" data-delete="crew" data-id="${c.Employee_Number}">Delete</button></td>
+                        <td>${specialtiesStr}</td>
+                        <td><button class="btn small" data-edit="crew" data-id="${c.Employee_Number || c.employee_number}">Edit</button> <button class="btn small danger" data-delete="crew" data-id="${c.Employee_Number || c.employee_number}">Delete</button></td>
                     </tr>`;
                 }).join('');
             }
             updateScheduleStats();
             updateStaffOverview();
         }
-    }
-
-    function updateSpecialtiesStats() {
-        const statsDiv = document.getElementById('teamStats');
-        const activeTab = document.getElementById('teamSupTab').classList.contains('active') ? 'sup' : 'crew';
-        const list = activeTab === 'sup' ? staffData.supervisors : staffData.crew;
-        const counts = {asbestos:0, lead:0, mold:0, bio:0, bacteria:0, contents:0, duct:0, drivers:0};
-        list.forEach(s => {
-            const specs = s.Specialties || [];
-            const arr = Array.isArray(specs) ? specs : specs.toString().split(',');
-            arr.forEach(sp => {
-                const low = sp.toLowerCase().trim();
-                if (low.includes('asbestos')) counts.asbestos++;
-                if (low.includes('lead')) counts.lead++;
-                if (low.includes('mold')) counts.mold++;
-                if (low.includes('bio')) counts.bio++;
-                if (low.includes('bacteria')) counts.bacteria++;
-                if (low.includes('contents')) counts.contents++;
-                if (low.includes('duct')) counts.duct++;
-                if (low.includes('driver')) counts.drivers++;
-            });
-        });
-        statsDiv.innerHTML = `
-            <div>Asbestos: <strong>${counts.asbestos}</strong></div>
-            <div>Lead: <strong>${counts.lead}</strong></div>
-            <div>Mold: <strong>${counts.mold}</strong></div>
-            <div>Bio Haz: <strong>${counts.bio}</strong></div>
-            <div>Bacteria: <strong>${counts.bacteria}</strong></div>
-            <div>Contents: <strong>${counts.contents}</strong></div>
-            <div>Duct: <strong>${counts.duct}</strong></div>
-            <div>Drivers: <strong>${counts.drivers}</strong></div>
-        `;
     }
 
     // Calculate specialty counts for supervisors and crew and update the schedule modules.
@@ -3227,7 +3197,10 @@ Option 3"></textarea>
         });
         // Count supervisors
         staffData.supervisors.forEach(s => {
-            const specs = s.Specialties || s.specialties || [];
+            let specs = s.Specialties || s.specialties || [];
+            if (typeof specs === 'string') {
+                try { specs = JSON.parse(specs); } catch(e) { specs = []; }
+            }
             const arr = Array.isArray(specs) ? specs : specs.toString().split(',').map(sp => sp.trim());
             arr.forEach(sp => {
                 specKeys.forEach(k => {
@@ -3244,7 +3217,10 @@ Option 3"></textarea>
         });
         // Count crew
         staffData.crew.forEach(c => {
-            const specs = c.Specialties || c.specialties || [];
+            let specs = c.Specialties || c.specialties || [];
+            if (typeof specs === 'string') {
+                try { specs = JSON.parse(specs); } catch(e) { specs = []; }
+            }
             const arr = Array.isArray(specs) ? specs : specs.toString().split(',').map(sp => sp.trim());
             arr.forEach(sp => {
                 specKeys.forEach(k => {
@@ -3294,8 +3270,9 @@ Option 3"></textarea>
         // Build job count map
         const jobsByDate = {};
         jobs.forEach(job => {
-            if (!job.Date) return;
-            const d = new Date(job.Date);
+            const dateVal = job.date || job.Date;
+            if (!dateVal) return;
+            const d = new Date(dateVal);
             const y = d.getFullYear();
             const m = d.getMonth() + 1;
             const day = d.getDate();
@@ -3410,8 +3387,8 @@ Option 3"></textarea>
         const btnDup = document.getElementById('btnDuplicateRow');
         const btnDel = document.getElementById('btnDeleteRow');
         if (job && infoEl) {
-            const dateLabel = job.Date ? new Date(job.Date).toLocaleDateString('en-US') : '';
-            infoEl.textContent = `Job #${job.Job_Number || ''} â€“ ${dateLabel}`;
+            const dateLabel = (job.date || job.Date) ? new Date(job.date || job.Date).toLocaleDateString('en-US') : '';
+            infoEl.textContent = `Job #${job.job_number || job.Job_Number || ''} — ${dateLabel}`;
             if (btnEdit) btnEdit.disabled = false;
             if (btnDup) btnDup.disabled = false;
             if (btnDel) btnDel.disabled = false;
@@ -3424,32 +3401,9 @@ Option 3"></textarea>
     }
 
     async function loadSkillsMatrix() {
-        const res = await callAPI('getSkillsMatrix');
-        if (res.success) {
-            const matrix = res.matrix || [];
-            const skills = res.skills || [];
-            const container = document.getElementById('skillsMatrixBody');
-            if (!matrix.length) {
-                container.innerHTML = '<div class="empty">No skills data</div>';
-                return;
-            }
-            // Build table with dynamic columns
-            let html = '<table><thead><tr>';
-            const headers = Object.keys(matrix[0]);
-            headers.forEach(h => {
-                html += `<th>${h.replace(/_/g,' ')}</th>`;
-            });
-            html += '</tr></thead><tbody>';
-            matrix.forEach(row => {
-                html += '<tr>';
-                headers.forEach(h => {
-                    html += `<td>${row[h] || ''}</td>`;
-                });
-                html += '</tr>';
-            });
-            html += '</tbody></table>';
-            container.innerHTML = html;
-        }
+        // Placeholder for skills matrix - can be expanded
+        const container = document.getElementById('skillsMatrixBody');
+        container.innerHTML = '<div class="empty">Skills matrix feature coming soon</div>';
     }
 
     async function loadCertifications() {
@@ -3466,7 +3420,7 @@ Option 3"></textarea>
         if (filterSelect) {
             const types = new Set();
             certifications.forEach(c => {
-                const t = c.certificationType || c.Certification_Type || c.certification_type;
+                const t = c.certification_type || c.Certification_Type || c.certificationType;
                 if (t) types.add(t);
             });
             const prev = filterSelect.value;
@@ -3494,7 +3448,7 @@ Option 3"></textarea>
         // Apply filter if a type is selected
         if (filterSelect && filterSelect.value) {
             list = list.filter(c => {
-                const t = c.certificationType || c.Certification_Type || c.certification_type;
+                const t = c.certification_type || c.Certification_Type || c.certificationType;
                 return t === filterSelect.value;
             });
         }
@@ -3517,8 +3471,8 @@ Option 3"></textarea>
         });
         html += '</tr></thead><tbody>';
         list.forEach(c => {
-            const issue = c.issueDate || c.Issue_Date;
-            const expiry = c.expiryDate || c.Expiry_Date;
+            const issue = c.issue_date || c.Issue_Date || c.issueDate;
+            const expiry = c.expiry_date || c.Expiry_Date || c.expiryDate;
             let expiryDate = expiry ? new Date(expiry) : null;
             let statusClass = 'cert-status-ok';
             if (expiryDate && !isNaN(expiryDate)) {
@@ -3538,9 +3492,10 @@ Option 3"></textarea>
             }
             html += `<tr class="${statusClass}">`;
             // Employee Name
-            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${c.employeeName || c.Employee_Name || ''}</td>`;
+            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${c.employee_name || c.Employee_Name || c.employeeName || ''}</td>`;
             // Certification Type
-            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${(c.certificationType || c.Certification_Type || '').replace(/_/g,' ')}</td>`;
+            const certType = c.certification_type || c.Certification_Type || c.certificationType || '';
+            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${certType.replace(/_/g,' ')}</td>`;
             // Issue Date
             const issueStr = issue ? new Date(issue).toLocaleDateString('en-US') : '';
             html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${issueStr}</td>`;
@@ -3548,11 +3503,11 @@ Option 3"></textarea>
             const expiryStr = expiry ? new Date(expiry).toLocaleDateString('en-US') : '';
             html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${expiryStr}</td>`;
             // Cert Number
-            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${c.certNumber || c.Cert_Number || ''}</td>`;
+            html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${c.cert_number || c.Cert_Number || c.certNumber || ''}</td>`;
             // Notes and attachment icon
             let noteStr = (c.notes || c.Notes || '');
-            if (c.fileData) {
-                noteStr += ` <a href="data:application/pdf;base64,${c.fileData}" target="_blank" title="View PDF">ðŸ“Ž</a>`;
+            if (c.file_data || c.fileData) {
+                noteStr += ` <a href="data:application/pdf;base64,${c.file_data || c.fileData}" target="_blank" title="View PDF">🔎</a>`;
             }
             html += `<td style="padding:6px 8px; border-bottom:1px solid #f3f4f6;">${noteStr}</td>`;
             html += '</tr>';
@@ -3572,7 +3527,7 @@ Option 3"></textarea>
                 </div>
                 <div class="card" style="border-left:4px solid #10b981;">
                     <div class="value">${ok}</div>
-                    <div class="subtext">Active (â‰¥60d)</div>
+                    <div class="subtext">Active (≥60d)</div>
                 </div>`;
         }
         // Attach click handlers to each row for editing
@@ -3590,29 +3545,34 @@ Option 3"></textarea>
         const modal = document.getElementById('modalEditCertification');
         const form = document.getElementById('formEditCertification');
         if (!modal || !form) return;
-        form.certId.value = cert.Cert_ID || cert.id || '';
-        form.employeeName.value = cert.employeeName || cert.Employee_Name || '';
-        form.certificationType.value = (cert.certificationType || cert.Certification_Type || '').replace(/_/g,' ');
-        const issueVal = cert.issueDate || cert.Issue_Date || '';
+        form.certId.value = cert.id || cert.Cert_ID || '';
+        form.employeeName.value = cert.employee_name || cert.Employee_Name || cert.employeeName || '';
+        
+        const certType = cert.certification_type || cert.Certification_Type || cert.certificationType || '';
+        form.certificationType.value = certType.replace(/_/g,' ');
+        
+        const issueVal = cert.issue_date || cert.Issue_Date || cert.issueDate || '';
         if (issueVal) {
             const d = new Date(issueVal);
             form.issueDate.value = d.toISOString().substring(0,10);
         } else {
             form.issueDate.value = '';
         }
-        const expVal = cert.expiryDate || cert.Expiry_Date || '';
+        const expVal = cert.expiry_date || cert.Expiry_Date || cert.expiryDate || '';
         if (expVal) {
             const d2 = new Date(expVal);
             form.expiryDate.value = d2.toISOString().substring(0,10);
         } else {
             form.expiryDate.value = '';
         }
-        form.certNumber.value = cert.certNumber || cert.Cert_Number || '';
+        form.certNumber.value = cert.cert_number || cert.Cert_Number || cert.certNumber || '';
         form.notes.value = cert.notes || cert.Notes || '';
         const ex = document.getElementById('existingCertFile');
         if (ex) {
-            if (cert.fileData) {
-                ex.innerHTML = `<a href="data:application/pdf;base64,${cert.fileData}" target="_blank">${cert.fileName || 'View PDF'}</a>`;
+            const fileData = cert.file_data || cert.fileData;
+            const fileName = cert.file_name || cert.fileName || 'View PDF';
+            if (fileData) {
+                ex.innerHTML = `<a href="data:application/pdf;base64,${fileData}" target="_blank">${fileName}</a>`;
             } else {
                 ex.innerHTML = '';
             }
@@ -3626,14 +3586,11 @@ Option 3"></textarea>
             renderColumnsTable();
             return;
         }
-        const res = await callAPI('getColumnSchema');
-        if (res.success && res.schema) {
-            columns = res.schema;
-        } else {
-            columns = JSON.parse(JSON.stringify(DEFAULT_SCHEMA));
-        }
+        // Load from local storage or use defaults
+        columns = JSON.parse(JSON.stringify(DEFAULT_SCHEMA));
         renderColumnsTable();
     }
+    
     function renderColumnsTable() {
         const tbody = document.getElementById('columnsTableBody');
         if (!columns.length) {
@@ -3672,6 +3629,8 @@ Option 3"></textarea>
                 const id = parseInt(input.dataset.toggle);
                 const col = columns.find(c => c.id === id);
                 if (col) col.visible = input.checked;
+                saveLocalConfig();
+                renderJobsTable();
             };
         });
         // Width input changes
@@ -3680,33 +3639,12 @@ Option 3"></textarea>
                 const id = parseInt(input.dataset.width);
                 const col = columns.find(c => c.id === id);
                 if (col) col.width = input.value + 'px';
+                saveLocalConfig();
             };
-        });
-        // Drag and drop reorder
-        tbody.querySelectorAll('tr').forEach((row, idx) => {
-            row.draggable = true;
-            row.addEventListener('dragstart', ev => {
-                ev.dataTransfer.setData('text/plain', idx.toString());
-            });
-            row.addEventListener('dragover', ev => {
-                ev.preventDefault();
-            });
-            row.addEventListener('drop', ev => {
-                ev.preventDefault();
-                const from = parseInt(ev.dataTransfer.getData('text/plain'));
-                const to = idx;
-                if (!isNaN(from) && !isNaN(to) && from !== to) {
-                    const moved = columns.splice(from, 1)[0];
-                    columns.splice(to, 0, moved);
-                    renderColumnsTable();
-                }
-            });
         });
     }
 
-    // ============================================
-    // Reports Dashboard Functions
-    // ============================================
+    // REPORTS DASHBOARD FUNCTIONS
     function parseHours(timeStr) {
         if (!timeStr) return 0;
         const str = ('' + timeStr).toUpperCase();
@@ -3740,7 +3678,7 @@ Option 3"></textarea>
             supSelect.innerHTML = '<option value="">All Supervisors</option>';
             if (staffData && staffData.supervisors) {
                 staffData.supervisors.forEach(s => {
-                    const name = s.Full_Name || s.fullName || '';
+                    const name = s.Full_Name || s.full_name || '';
                     if (name) {
                         supSelect.innerHTML += `<option value="${name}">${name}</option>`;
                     }
@@ -3826,16 +3764,17 @@ Option 3"></textarea>
         const statusFilter = $('#reportStatus') ? $('#reportStatus').value : '';
         const posFilter = $('#reportPosition') ? $('#reportPosition').value : '';
         reportFilteredJobs = reportJobs.filter(job => {
-            if (!job.Date) return false;
-            const d = new Date(job.Date);
+            const jobDate = job.date || job.Date;
+            if (!jobDate) return false;
+            const d = new Date(jobDate);
             if (d < startDate || d > endDate) return false;
             if (supFilter) {
-                const sups = job.Supervisor || '';
+                const sups = (job.supervisor || job.Supervisor || '');
                 if (!sups.includes(supFilter)) return false;
             }
-            if (locFilter && (job.Location || '') !== locFilter) return false;
-            if (statusFilter && (job.Status || '') !== statusFilter) return false;
-            if (posFilter && (job.Position || '') !== posFilter) return false;
+            if (locFilter && (job.location || job.Location || '') !== locFilter) return false;
+            if (statusFilter && (job.status || job.Status || '') !== statusFilter) return false;
+            if (posFilter && (job.position || job.Position || '') !== posFilter) return false;
             return true;
         });
         updateReportMetrics();
@@ -3850,9 +3789,9 @@ Option 3"></textarea>
         let completed = 0;
         let hours = 0;
         reportFilteredJobs.forEach(job => {
-            const prog = job.Progress || '';
+            const prog = job.progress || job.Progress || '';
             if (prog === '100%' || prog === 'COMPLETE' || prog === '100') completed++;
-            hours += parseHours(job.Time);
+            hours += parseHours(job.time || job.Time);
         });
         const pending = total - completed;
         const efficiency = total ? Math.round((completed / total) * 100) : 0;
@@ -3871,19 +3810,21 @@ Option 3"></textarea>
         const workerStats = {};
         let alertCount = 0;
         reportFilteredJobs.forEach(job => {
-            const progVal = job.Progress || '';
-            const notified = job.Notified || '';
-            const scheduled = job.Scheduled || '';
+            const progVal = job.progress || job.Progress || '';
+            const notified = job.notified || job.Notified || '';
+            const scheduled = job.scheduled || job.Scheduled || '';
             if (progVal === 'HOLD' || progVal === 'PUSH' || notified === 'No' || scheduled === 'No') alertCount++;
             const names = [];
-            if (job.Supervisor) {
-                job.Supervisor.split(',').forEach(n => {
+            const supVal = job.supervisor || job.Supervisor || '';
+            if (supVal) {
+                supVal.split(',').forEach(n => {
                     const t = n.trim();
                     if (t) names.push(t);
                 });
             }
-            if (job.Crew) {
-                job.Crew.split(',').forEach(n => {
+            const crewVal = job.crew || job.Crew || '';
+            if (crewVal) {
+                crewVal.split(',').forEach(n => {
                     const t = n.trim();
                     if (t) names.push(t);
                 });
@@ -3919,83 +3860,6 @@ Option 3"></textarea>
         updateAlertsPanel();
     }
 
-    function updateStatusDistribution() {
-        const container = document.getElementById('statusDistributionList');
-        if (!container) return;
-        container.innerHTML = '';
-        const total = reportFilteredJobs.length;
-        const counts = {};
-        REPORT_STATUS_LIST.forEach(s => { counts[s] = 0; });
-        reportFilteredJobs.forEach(job => {
-            const s = job.Status || '';
-            if (counts.hasOwnProperty(s)) counts[s] = (counts[s] || 0) + 1;
-        });
-        REPORT_STATUS_LIST.forEach(s => {
-            const count = counts[s] || 0;
-            const perc = total ? (count / total * 100) : 0;
-            const row = document.createElement('div');
-            row.className = 'status-row';
-            const label = document.createElement('div');
-            label.textContent = s;
-            const bar = document.createElement('div');
-            bar.className = 'bar';
-            bar.style.background = REPORT_STATUS_COLORS[s] || '#3b82f6';
-            // override flex to allow width to represent percentage
-            bar.style.flex = '0 0 ' + perc + '%';
-            const countText = document.createElement('span');
-            countText.textContent = count;
-            row.appendChild(label);
-            row.appendChild(bar);
-            row.appendChild(countText);
-            container.appendChild(row);
-        });
-    }
-
-    function updateTopWorkers() {
-        const container = document.getElementById('topWorkersList');
-        if (!container) return;
-        container.innerHTML = '';
-        const map = {};
-        reportFilteredJobs.forEach(job => {
-            const sup = job.Supervisor || '';
-            sup.split(',').map(s => s.trim()).forEach(w => {
-                if (!w) return;
-                if (!map[w]) map[w] = {jobs:0,hours:0};
-                map[w].jobs++;
-                map[w].hours += parseHours(job.Time);
-            });
-            const crew = job.Crew || '';
-            crew.split(',').map(c => c.trim()).forEach(w => {
-                if (!w) return;
-                if (!map[w]) map[w] = {jobs:0,hours:0};
-                map[w].jobs++;
-                map[w].hours += parseHours(job.Time);
-            });
-        });
-        const entries = Object.entries(map);
-        entries.sort((a,b) => b[1].jobs - a[1].jobs);
-        const top = entries.slice(0,5);
-        const maxJobs = top.length ? top[0][1].jobs : 0;
-        top.forEach(([name,data]) => {
-            const row = document.createElement('div');
-            row.className = 'worker-row';
-            const label = document.createElement('div');
-            label.textContent = name;
-            const bar = document.createElement('div');
-            bar.className = 'bar';
-            const width = maxJobs ? (data.jobs / maxJobs * 100) : 0;
-            bar.style.background = '#10b981';
-            // override flex to allow width to represent percentage
-            bar.style.flex = '0 0 ' + width + '%';
-            const countText = document.createElement('span');
-            countText.textContent = data.jobs;
-            row.appendChild(label);
-            row.appendChild(bar);
-            row.appendChild(countText);
-            container.appendChild(row);
-        });
-    }
-
     function updateTrendJobs() {
         const container = document.getElementById('jobsTrendList');
         if (!container) return;
@@ -4003,8 +3867,9 @@ Option 3"></textarea>
         const {startDate, endDate} = getPeriodDates();
         const trendMap = {};
         reportFilteredJobs.forEach(job => {
-            if (!job.Date) return;
-            const d = new Date(job.Date);
+            const jobDate = job.date || job.Date;
+            if (!jobDate) return;
+            const d = new Date(jobDate);
             if (d < startDate || d > endDate) return;
             const ws = new Date(d);
             ws.setDate(d.getDate() - d.getDay());
@@ -4044,12 +3909,12 @@ Option 3"></textarea>
         const body = document.getElementById('reportsTableBody');
         if (!head || !body) return;
         const cols = [
-            {name:'Date', key:'Date', type:'date'},
-            {name:'Job #', key:'Job_Number'},
-            {name:'Status', key:'Status'},
-            {name:'Supervisor', key:'Supervisor'},
-            {name:'Crew', key:'Crew'},
-            {name:'Hours', key:'Time'}
+            {name:'Date', key:'date', altKey:'Date', type:'date'},
+            {name:'Job #', key:'job_number', altKey:'Job_Number'},
+            {name:'Status', key:'status', altKey:'Status'},
+            {name:'Supervisor', key:'supervisor', altKey:'Supervisor'},
+            {name:'Crew', key:'crew', altKey:'Crew'},
+            {name:'Hours', key:'time', altKey:'Time'}
         ];
         head.innerHTML = cols.map(c => `<th>${c.name}</th>`).join('');
         if (!reportFilteredJobs.length) {
@@ -4058,7 +3923,7 @@ Option 3"></textarea>
         }
         body.innerHTML = reportFilteredJobs.map(job => {
             return '<tr>' + cols.map(c => {
-                let v = job[c.key] || '';
+                let v = job[c.key] || job[c.altKey] || '';
                 if (c.type === 'date' && v) {
                     v = new Date(v).toLocaleDateString('en-US');
                 } else if (c.name === 'Hours') {
@@ -4088,12 +3953,13 @@ Option 3"></textarea>
         let csv = cols.join(',') + '\n';
         reportFilteredJobs.forEach(job => {
             const row = [];
-            row.push(job.Date ? new Date(job.Date).toLocaleDateString('en-US') : '');
-            row.push(job.Job_Number || '');
-            row.push(job.Status || '');
-            row.push(job.Supervisor || '');
-            row.push(job.Crew || '');
-            row.push(parseHours(job.Time));
+            const dateVal = job.date || job.Date;
+            row.push(dateVal ? new Date(dateVal).toLocaleDateString('en-US') : '');
+            row.push(job.job_number || job.Job_Number || '');
+            row.push(job.status || job.Status || '');
+            row.push(job.supervisor || job.Supervisor || '');
+            row.push(job.crew || job.Crew || '');
+            row.push(parseHours(job.time || job.Time));
             csv += row.map(cell => {
                 const cellStr = (cell||'').toString().replace(/"/g,'""');
                 if (cellStr.includes(',') || cellStr.includes('"')) {
@@ -4121,7 +3987,7 @@ Option 3"></textarea>
         const counts = {};
         REPORT_STATUS_LIST.forEach(s => { counts[s] = 0; });
         reportFilteredJobs.forEach(job => {
-            const s = job.Status || '';
+            const s = job.status || job.Status || '';
             if (counts.hasOwnProperty(s)) counts[s]++;
         });
         const donut = document.getElementById('statusDonutChart');
@@ -4176,16 +4042,18 @@ Option 3"></textarea>
         const workerCounts = {};
         reportFilteredJobs.forEach(job => {
             const names = [];
-            if (job.Supervisor) {
-                job.Supervisor.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
+            const supVal = job.supervisor || job.Supervisor || '';
+            const crewVal = job.crew || job.Crew || '';
+            if (supVal) {
+                supVal.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
             }
-            if (job.Crew) {
-                job.Crew.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
+            if (crewVal) {
+                crewVal.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
             }
             names.forEach(name => {
                 if (!workerCounts[name]) workerCounts[name] = {total:0, completed:0};
                 workerCounts[name].total++;
-                const progVal = job.Progress || '';
+                const progVal = job.progress || job.Progress || '';
                 if (progVal === '100%' || progVal === 'COMPLETE' || progVal === '100') workerCounts[name].completed++;
             });
         });
@@ -4216,9 +4084,9 @@ Option 3"></textarea>
         if (!container) return;
         let total = 0, used = 0, active = 0;
         reportFilteredJobs.forEach(job => {
-            total += parseFloat(job.MP_Total) || 0;
-            used += parseFloat(job.MP_Used) || 0;
-            active += parseFloat(job.MP_Active) || 0;
+            total += parseFloat(job.mp_total || job.MP_Total) || 0;
+            used += parseFloat(job.mp_used || job.MP_Used) || 0;
+            active += parseFloat(job.mp_active || job.MP_Active) || 0;
         });
         const available = total - used;
         container.innerHTML = '';
@@ -4261,7 +4129,7 @@ Option 3"></textarea>
         if (!container) return;
         let total = 0;
         reportFilteredJobs.forEach(job => {
-            total += parseFloat(job.Change_Order) || 0;
+            total += parseFloat(job.change_order || job.Change_Order) || 0;
         });
         const avg = reportFilteredJobs.length ? (total / reportFilteredJobs.length) : 0;
         container.innerHTML = '';
@@ -4309,8 +4177,9 @@ Option 3"></textarea>
         container.innerHTML = '';
         const counts = {};
         reportFilteredJobs.forEach(job => {
-            if (!job.Date) return;
-            const date = new Date(job.Date);
+            const jobDate = job.date || job.Date;
+            if (!jobDate) return;
+            const date = new Date(jobDate);
             // Monday-based week start
             const monday = new Date(date);
             const day = monday.getDay();
@@ -4346,9 +4215,9 @@ Option 3"></textarea>
         container.innerHTML = '';
         const alerts = [];
         reportFilteredJobs.forEach(job => {
-            const progVal = job.Progress || '';
-            const notified = job.Notified || '';
-            const scheduled = job.Scheduled || '';
+            const progVal = job.progress || job.Progress || '';
+            const notified = job.notified || job.Notified || '';
+            const scheduled = job.scheduled || job.Scheduled || '';
             if (progVal === 'HOLD' || progVal === 'PUSH' || notified === 'No' || scheduled === 'No') {
                 alerts.push(job);
             }
@@ -4359,17 +4228,18 @@ Option 3"></textarea>
             return;
         }
         alerts.forEach(job => {
-            const dateStr = job.Date ? new Date(job.Date).toLocaleDateString('en-US') : '';
-            const status = job.Status || '';
+            const dateVal = job.date || job.Date;
+            const dateStr = dateVal ? new Date(dateVal).toLocaleDateString('en-US') : '';
+            const status = job.status || job.Status || '';
             const row = document.createElement('div');
             let level = 'ok';
-            const progVal = job.Progress || '';
-            const notified = job.Notified || '';
-            const scheduled = job.Scheduled || '';
+            const progVal = job.progress || job.Progress || '';
+            const notified = job.notified || job.Notified || '';
+            const scheduled = job.scheduled || job.Scheduled || '';
             if (progVal === 'HOLD' || progVal === 'PUSH') level = 'critical';
             else if (notified === 'No' || scheduled === 'No') level = 'warning';
             row.className = `alert-item alert-${level}`;
-            row.innerHTML = `<span>${dateStr} - ${job.Job_Number || ''}</span><span class="badge">${status}</span>`;
+            row.innerHTML = `<span>${dateStr} - ${job.job_number || job.Job_Number || ''}</span><span class="badge">${status}</span>`;
             container.appendChild(row);
         });
     }
@@ -4430,7 +4300,6 @@ Option 3"></textarea>
     }
 
     // Users Management Functions
-    // Load list of users from backend and render table
     async function loadUsers() {
         try {
             const res = await callAPI('getUsers');
@@ -4445,7 +4314,7 @@ Option 3"></textarea>
         }
         renderUsersTable();
     }
-    // Render the users table
+    
     function renderUsersTable() {
         const container = document.getElementById('usersTableContainer');
         if (!container) return;
@@ -4499,7 +4368,7 @@ Option 3"></textarea>
             }
         });
     }
-    // Open modal for adding or editing a user
+    
     function openUserModal(user = null, index = null) {
         const modal = document.getElementById('modalUser');
         if (!modal) return;
@@ -4528,17 +4397,16 @@ Option 3"></textarea>
         modal.classList.add('show');
     }
 
-    // Handle click for Add User button, ensuring the event doesn't propagate and cause unexpected navigation
     function openUserModalClick(event) {
         if (event) event.stopPropagation();
         openUserModal();
     }
-    // Close the user modal
+    
     function closeUserModal() {
         const modal = document.getElementById('modalUser');
         if (modal) modal.classList.remove('show');
     }
-    // Save user (add or edit)
+    
     async function saveUser() {
         const modal = document.getElementById('modalUser');
         if (!modal) return;
@@ -4592,6 +4460,82 @@ Option 3"></textarea>
         }
     }
 
+    // Update staff overview metrics based on loaded staff and certifications
+    function updateStaffOverview() {
+        try {
+            const totalSup = staffData && staffData.supervisors ? staffData.supervisors.length : 0;
+            const totalCrew = staffData && staffData.crew ? staffData.crew.length : 0;
+            const total = totalSup + totalCrew;
+            let availableSup = 0;
+            let availableCrew = 0;
+            if (staffData && staffData.supervisors) {
+                availableSup = staffData.supervisors.filter(s => (s.Status || s.status) === 'AVAILABLE').length;
+            }
+            if (staffData && staffData.crew) {
+                availableCrew = staffData.crew.filter(c => (c.Status || c.status) === 'AVAILABLE').length;
+            }
+            const available = availableSup + availableCrew;
+            if (document.getElementById('overviewTotal')) document.getElementById('overviewTotal').textContent = total;
+            if (document.getElementById('overviewAvailable')) document.getElementById('overviewAvailable').textContent = available;
+            if (document.getElementById('overviewSupervisors')) document.getElementById('overviewSupervisors').textContent = totalSup;
+            if (document.getElementById('overviewCrew')) document.getElementById('overviewCrew').textContent = totalCrew;
+            // Compute certifications metrics
+            let active = 0;
+            let expiring = 0;
+            const today = new Date();
+            (certifications || []).forEach(cert => {
+                const expiry = cert.expiry_date || cert.Expiry_Date || cert.expiryDate;
+                if (!expiry) return;
+                const expiryDate = new Date(expiry);
+                if (isNaN(expiryDate.getTime())) return;
+                const diff = (expiryDate.getTime() - today.getTime()) / 86400000;
+                const days = Math.floor(diff);
+                if (days < 0) return; // expired not counted
+                if (days <= 60) expiring++;
+                else active++;
+            });
+            if (document.getElementById('overviewCertified')) document.getElementById('overviewCertified').textContent = active + expiring;
+            if (document.getElementById('overviewCertActive')) document.getElementById('overviewCertActive').textContent = active;
+            if (document.getElementById('overviewCertExpiring')) document.getElementById('overviewCertExpiring').textContent = expiring;
+        } catch(e) {
+            console.error('updateStaffOverview error', e);
+        }
+    }
+
+    function openEditColumnModal(id) {
+        const col = columns.find(c => c.id === id);
+        if (!col) return;
+        $('#editColumnId').value = col.id;
+        $('#editColumnName').value = col.name;
+        $('#editColumnType').value = col.type;
+        $('#editColumnWidth').value = parseInt(col.width);
+        $('#editColumnRequired').value = col.required ? 'true' : 'false';
+        $('#editColumnDescription').value = col.description || '';
+        if (col.type === 'dropdown' || col.type === 'multiselect') {
+            $('#editColumnOptionsContainer').style.display = 'block';
+            $('#editColumnOptions').value = col.options ? col.options.join('\n') : '';
+        } else {
+            $('#editColumnOptionsContainer').style.display = 'none';
+            $('#editColumnOptions').value = '';
+        }
+        // Show modal
+        document.getElementById('modalEditColumn').classList.add('show');
+    }
+
+    async function loadCertificationEmployees() {
+        const result = await callAPI('getStaff', {});
+        const select = document.getElementById('certificationEmployee');
+        select.innerHTML = '<option value="">Select Employee</option>';
+        if (result.success) {
+            const staff = result.staff || [];
+            staff.forEach(s => {
+                const empNum = s.Employee_Number || s.employee_number || '';
+                const fullName = s.Full_Name || s.full_name || '';
+                select.innerHTML += `<option value="${empNum}">${fullName}</option>`;
+            });
+        }
+    }
+
     // Event listeners
     document.addEventListener('DOMContentLoaded', () => {
         // Load local config
@@ -4611,13 +4555,6 @@ Option 3"></textarea>
             }
         }
 
-        // Move appearance section into settings page-body if defined
-        const appearanceSection = document.getElementById('appearance');
-        const settingsBody = document.querySelector('#settings .page-body');
-        if (appearanceSection && settingsBody && !appearanceSection.dataset.moved) {
-            settingsBody.appendChild(appearanceSection);
-            appearanceSection.dataset.moved = '1';
-        }
         // Initialize company name display
         const companyNameDisplay = document.getElementById('companyNameDisplay');
         const companyNameInput = document.getElementById('companyName');
@@ -4634,8 +4571,6 @@ Option 3"></textarea>
                 companyNameInput.dataset.bound = '1';
             }
         }
-        // No custom button radius input in this simplified appearance panel
-        // Appearance reset button is not used in the simplified appearance configuration
 
         // User management: bind add and save buttons
         const addUserBtn = document.getElementById('btnAddUser');
@@ -4705,38 +4640,13 @@ Option 3"></textarea>
             renderJobsTable();
             jobs = oldJobs;
         });
-        // Column toggling & width changing
-        document.getElementById('columnsTableBody').addEventListener('change', (e) => {
-            const target = e.target;
-            if (target.dataset.toggle) {
-                const id = parseInt(target.dataset.toggle);
-                const col = columns.find(c => c.id === id);
-                if (col) col.visible = target.checked;
-                saveLocalConfig();
-                renderJobsTable();
-            }
-            if (target.dataset.width) {
-                const id = parseInt(target.dataset.width);
-                const col = columns.find(c => c.id === id);
-                if (col) col.width = target.value + 'px';
-            }
-        });
-        // Edit column button
-        document.getElementById('columnsTableBody').addEventListener('click', e => {
-            const btn = e.target.closest('button[data-edit-column]');
-            if (btn) {
-                const id = parseInt(btn.dataset.editColumn);
-                openEditColumnModal(id);
-            }
-        });
+        
         // Save columns
         $('#btnSaveColumns').addEventListener('click', async () => {
-            const result = await callAPI('syncColumns', {columns});
-            if (result.success) {
-                showNotification('Columns synced!','success');
-                saveLocalConfig();
-            }
+            saveLocalConfig();
+            showNotification('Columns saved locally!','success');
         });
+        
         // Add column: open modal and reset fields
         $('#btnAddColumn').addEventListener('click', () => {
             $('#addColumnName').value = '';
@@ -4755,6 +4665,7 @@ Option 3"></textarea>
             const cont = document.getElementById('addColumnOptionsContainer');
             cont.style.display = (val === 'dropdown' || val === 'multiselect') ? 'block' : 'none';
         });
+        
         // Save new column
         $('#btnSaveAddColumn').addEventListener('click', async () => {
             const name = $('#addColumnName').value.trim();
@@ -4770,22 +4681,22 @@ Option 3"></textarea>
             if (type === 'dropdown' || type === 'multiselect') {
                 options = $('#addColumnOptions').value.split('\n').map(o => o.trim()).filter(o => o);
             }
-            const newCol = {name, type, width: widthVal + 'px', required, visible, options};
-            let result;
-            try {
-                result = await callAPI('addColumn', newCol);
-            } catch(e) {
-                result = {success:false};
-            }
-            if (result && result.success) {
-                showNotification('Column added','success');
-                document.getElementById('modalAddColumn').classList.remove('show');
-                // Refresh columns from server to get new ID
-                await loadColumns();
-            } else {
-                showNotification('Failed to add column','error');
-            }
+            const newCol = {
+                id: columns.length ? Math.max(...columns.map(c => c.id)) + 1 : 1,
+                name, 
+                type, 
+                width: widthVal + 'px', 
+                required, 
+                visible, 
+                options
+            };
+            columns.push(newCol);
+            renderColumnsTable();
+            saveLocalConfig();
+            document.getElementById('modalAddColumn').classList.remove('show');
+            showNotification('Column added','success');
         });
+        
         // Add job modal
         $('#btnAddJob').addEventListener('click', () => {
             document.getElementById('modalAddJob').classList.add('show');
@@ -4801,6 +4712,7 @@ Option 3"></textarea>
             document.querySelector('#modalAddJob [data-jobtab="basic"]').style.borderBottomColor='#3b82f6';
             document.querySelector('#modalAddJob [data-jobtab="basic"]').style.color='#3b82f6';
         });
+        
         // Job form tab switching
         document.querySelectorAll('#modalAddJob [data-jobtab]').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -4815,6 +4727,7 @@ Option 3"></textarea>
                 btn.style.color='#3b82f6';
             });
         });
+        
         // Save job (create new or update existing)
         $('#btnSaveJob').addEventListener('click', async () => {
             const form = document.getElementById('formAddJob');
@@ -4852,6 +4765,7 @@ Option 3"></textarea>
                 }
             }
         });
+        
         // Add supervisor & crew modals
         $('#btnAddSupervisor').addEventListener('click', () => {
             document.getElementById('formAddSupervisor').reset();
@@ -4861,6 +4775,7 @@ Option 3"></textarea>
             document.getElementById('formAddCrew').reset();
             document.getElementById('modalAddCrew').classList.add('show');
         });
+        
         // Save supervisor
         $('#btnSaveSupervisor').addEventListener('click', async () => {
             const form = document.getElementById('formAddSupervisor');
@@ -4887,6 +4802,7 @@ Option 3"></textarea>
                 showNotification('Failed to add supervisor','error');
             }
         });
+        
         // Save crew
         $('#btnSaveCrew').addEventListener('click', async () => {
             const form = document.getElementById('formAddCrew');
@@ -4913,29 +4829,22 @@ Option 3"></textarea>
                 showNotification('Failed to add crew member','error');
             }
         });
+        
         // Add skill modal
         $('#btnAddSkill').addEventListener('click', () => {
             document.getElementById('modalAddSkill').classList.add('show');
         });
         $('#btnSaveSkill').addEventListener('click', async () => {
-            const name = $('#newSkillName').value.trim();
-            if (!name) { showNotification('Enter skill name','error'); return; }
-            const type = $('#newSkillType').value;
-            const desc = $('#newSkillDescription').value;
-            const res = await callAPI('addSkill', {name, type, description: desc});
-            if (res.success) {
-                showNotification('Skill added','success');
-                document.getElementById('modalAddSkill').classList.remove('show');
-                loadSkillsMatrix();
-            } else {
-                showNotification('Failed to add skill','error');
-            }
+            showNotification('Skills feature coming soon','info');
+            document.getElementById('modalAddSkill').classList.remove('show');
         });
+        
         // Add certification modal
         $('#btnAddCertification').addEventListener('click', () => {
             loadCertificationEmployees();
             document.getElementById('modalAddCertification').classList.add('show');
         });
+        
         $('#btnSaveCertification').addEventListener('click', async () => {
             const form = document.getElementById('formAddCertification');
             const data = Object.fromEntries(new FormData(form).entries());
@@ -4959,6 +4868,12 @@ Option 3"></textarea>
                 data.fileData = base64;
                 data.fileName = file.name;
             }
+            // Get employee name from select
+            const empSelect = document.getElementById('certificationEmployee');
+            data.employee_name = empSelect.options[empSelect.selectedIndex].text;
+            data.employee_number = data.employee;
+            delete data.employee;
+            
             const res = await callAPI('addCertification', data);
             if (res.success) {
                 showNotification('Certification added','success');
@@ -4976,6 +4891,7 @@ Option 3"></textarea>
                 renderCertificationsTable();
             });
         }
+        
         // Certification edit modal actions
         const btnUpdateCert = document.getElementById('btnUpdateCertification');
         if (btnUpdateCert) {
@@ -4983,9 +4899,9 @@ Option 3"></textarea>
                 const form = document.getElementById('formEditCertification');
                 const certId = form.certId.value;
                 const updates = {
-                    issueDate: form.issueDate.value,
-                    expiryDate: form.expiryDate.value,
-                    certNumber: form.certNumber.value,
+                    issue_date: form.issueDate.value,
+                    expiry_date: form.expiryDate.value,
+                    cert_number: form.certNumber.value,
                     notes: form.notes.value
                 };
                 const fileInput = document.getElementById('editCertFile');
@@ -4999,13 +4915,13 @@ Option 3"></textarea>
                         };
                         reader.readAsDataURL(file);
                     });
-                    updates.fileData = base64;
-                    updates.fileName = file.name;
+                    updates.file_data = base64;
+                    updates.file_name = file.name;
                 }
                 const res = await callAPI('updateCertification', {id: certId, updates});
                 if (res.success) {
                     showNotification('Certification updated','success');
-                    const idx = certifications.findIndex(c => (c.Cert_ID || c.id) === certId);
+                    const idx = certifications.findIndex(c => (c.id || c.Cert_ID) === certId);
                     if (idx !== -1) {
                         Object.assign(certifications[idx], updates);
                     }
@@ -5016,6 +4932,7 @@ Option 3"></textarea>
                 }
             });
         }
+        
         const btnDeleteCert = document.getElementById('btnDeleteCertification');
         if (btnDeleteCert) {
             btnDeleteCert.addEventListener('click', async () => {
@@ -5025,7 +4942,7 @@ Option 3"></textarea>
                 const res = await callAPI('deleteCertification', {id: certId});
                 if (res.success) {
                     showNotification('Certification deleted','success');
-                    certifications = certifications.filter(c => (c.Cert_ID || c.id) !== certId);
+                    certifications = certifications.filter(c => (c.id || c.Cert_ID) !== certId);
                     document.getElementById('modalEditCertification').classList.remove('show');
                     renderCertificationsTable();
                 } else {
@@ -5033,37 +4950,7 @@ Option 3"></textarea>
                 }
             });
         }
-        // Test API connection
-        $('#btnTestApi').addEventListener('click', async () => {
-            if (!gasUrl) { showNotification('Enter API URL','error'); return; }
-            const res = await callAPI('getDashboardStats');
-            if (res.success) {
-                showNotification('Connected!','success');
-            } else {
-                showNotification('Connection failed','error');
-            }
-        });
-        // Save API URL
-        $('#btnSaveApi').addEventListener('click', () => {
-            gasUrl = $('#gasUrl').value.trim();
-            if (!gasUrl) {
-                showNotification('Enter API URL','error'); return;
-            }
-            saveLocalConfig();
-            showNotification('API URL saved','success');
-        });
-        // Initialize sheets
-        document.querySelectorAll('#settings [data-year]').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                const year = parseInt(btn.dataset.year);
-                const res = await callAPI('initializeYearSheet', {year});
-                if (res.success) {
-                    showNotification(`Year ${year} sheet initialized`,'success');
-                } else {
-                    showNotification(`Failed to init ${year}`, 'error');
-                }
-            });
-        });
+        
         // Modal close buttons
         document.querySelectorAll('[data-close]').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -5071,17 +4958,7 @@ Option 3"></textarea>
                 document.getElementById(target).classList.remove('show');
             });
         });
-        // Staff specialties tab toggling
-        document.getElementById('teamSupTab').addEventListener('click', () => {
-            document.getElementById('teamSupTab').classList.add('active');
-            document.getElementById('teamCrewTab').classList.remove('active');
-            updateSpecialtiesStats();
-        });
-        document.getElementById('teamCrewTab').addEventListener('click', () => {
-            document.getElementById('teamCrewTab').classList.add('active');
-            document.getElementById('teamSupTab').classList.remove('active');
-            updateSpecialtiesStats();
-        });
+        
         // View modes highlight
         ['viewSimple','viewExtended','viewComplete'].forEach(id => {
             document.getElementById(id).addEventListener('click', (e) => {
@@ -5090,28 +4967,10 @@ Option 3"></textarea>
                 document.getElementById('viewComplete').style.background = 'rgba(255,255,255,0.3)';
             });
         });
+        
         // Filter buttons
         $('#btnApplyFilters').addEventListener('click', async () => {
-            const filters = {
-                dateFrom: $('#filterDateFrom').value,
-                dateTo: $('#filterDateTo').value,
-                jobNumber: $('#filterJobNumber').value,
-                pm: $('#filterPM').value,
-                position: $('#filterPosition').value,
-                status: $('#filterStatus').value,
-                progress: $('#filterProgress').value,
-                location: $('#filterLocation').value
-            };
-            const res = await callAPI('applyAdvancedFilters', {filters});
-            if (res.success) {
-                jobs = res.jobs || [];
-                renderJobsTable();
-                $('#jobCount').textContent = res.total;
-                updateScheduleStats();
-                showNotification('Filters applied','success');
-            } else {
-                showNotification('Failed to apply filters','error');
-            }
+            showNotification('Advanced filters feature coming soon','info');
         });
         $('#btnClearFilters').addEventListener('click', () => {
             $('#filterDateFrom').value = '';
@@ -5124,27 +4983,13 @@ Option 3"></textarea>
             $('#filterLocation').value = '';
             loadSchedule();
         });
+        
         // Refresh data
         $('#btnRefresh').addEventListener('click', () => {
             loadSchedule();
             loadDashboard();
         });
-        // Export CSV
-        $('#btnExport').addEventListener('click', async () => {
-            const year = parseInt($('#yearSelect').value);
-            const month = $('#monthSelect').value;
-            const res = await callAPI('exportJobsToCSV', {year, month});
-            if (res.success) {
-                const blob = new Blob([res.csv], {type:'text/csv'});
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = res.filename || `jobs_${year}_${month}.csv`;
-                link.click();
-                showNotification('CSV exported','success');
-            } else {
-                showNotification('Failed to export','error');
-            }
-        });
+        
         // Row action buttons event handlers
         const btnEditRow = document.getElementById('btnEditRow');
         const btnDuplicateRow = document.getElementById('btnDuplicateRow');
@@ -5164,6 +5009,7 @@ Option 3"></textarea>
                 deleteJobRow();
             });
         }
+        
         // Month navigation buttons for mini calendar
         const prevMonthBtn = document.getElementById('prevMonth');
         const nextMonthBtn = document.getElementById('nextMonth');
@@ -5181,8 +5027,7 @@ Option 3"></textarea>
         loadStaff();
     });
 
-    // ------- Inline handlers to ensure core actions always work ---------
-    // Open the Add Job modal and initialize its fields and tabs
+    // Inline handlers to ensure core actions always work
     function openAddJobModal() {
         const modal = document.getElementById('modalAddJob');
         if (!modal) return;
@@ -5203,132 +5048,63 @@ Option 3"></textarea>
             basicBtn.style.borderBottomColor = '#3b82f6';
             basicBtn.style.color = '#3b82f6';
         }
-
-    // Expose commonly used modal helper functions globally so they can be invoked from inline HTML attributes
-    window.openAddJobModal = openAddJobModal;
-    window.openScheduleFilters = openScheduleFilters;
-    window.refreshPage = refreshPage;
-    window.exportSchedule = exportSchedule;
-    window.closeModal = closeModal;
     }
 
-    // Show the Filters subtab within the Schedule page
     function openScheduleFilters() {
         switchSubtab('schedule', 'filters');
     }
 
-    // Refresh both schedule and dashboard data
     function refreshPage() {
         loadSchedule();
         loadDashboard();
     }
 
-    // Export the currently selected month of jobs to CSV
     async function exportSchedule() {
         const yearSelect = document.getElementById('yearSelect');
         const monthSelect = document.getElementById('monthSelect');
         if (!yearSelect || !monthSelect) return;
         const year = parseInt(yearSelect.value);
         const month = monthSelect.value;
-        try {
-            const res = await callAPI('exportJobsToCSV', { year, month });
-            if (res && res.success) {
-                const blob = new Blob([res.csv], { type: 'text/csv' });
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = res.filename || `jobs_${year}_${month}.csv`;
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                showNotification('CSV exported', 'success');
-            } else {
-                showNotification((res && res.error) || 'Failed to export', 'error');
-            }
-        } catch (e) {
-            showNotification('Export error', 'error');
-        }
+        
+        // Export current jobs to CSV
+        const cols = columns.filter(c => c.visible);
+        if (!cols.length) return;
+        
+        let csv = cols.map(c => c.name).join(',') + '\n';
+        jobs.forEach(job => {
+            const row = cols.map(col => {
+                let val = job[col.name] || job[col.name.toLowerCase()] || '';
+                if (col.type === 'date' && val) {
+                    val = new Date(val).toLocaleDateString('en-US');
+                }
+                // Escape CSV
+                const cellStr = (val+'').replace(/"/g,'""');
+                if (cellStr.includes(',') || cellStr.includes('"')) {
+                    return '"' + cellStr + '"';
+                }
+                return cellStr;
+            });
+            csv += row.join(',') + '\n';
+        });
+        
+        const blob = new Blob([csv], {type:'text/csv'});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `jobs_${year}_${month}.csv`;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        showNotification('CSV exported', 'success');
     }
 
-    // Close any modal by id
     function closeModal(id) {
         const modal = document.getElementById(id);
         if (modal) modal.classList.remove('show');
     }
 
-async function loadCertificationEmployees() {
-        const result = await callAPI('getStaff', {});
-        const select = document.getElementById('certificationEmployee');
-        select.innerHTML = '<option value="">Select Employee</option>';
-        if (result.success) {
-            const staff = result.staff || [];
-            staff.forEach(s => {
-                select.innerHTML += `<option value="${s.Employee_Number || s.employeeNumber}">${s.Full_Name || s.fullName}</option>`;
-            });
-        }
-    }
-
-    // Update staff overview metrics based on loaded staff and certifications
-    function updateStaffOverview() {
-        try {
-            const totalSup = staffData && staffData.supervisors ? staffData.supervisors.length : 0;
-            const totalCrew = staffData && staffData.crew ? staffData.crew.length : 0;
-            const total = totalSup + totalCrew;
-            let availableSup = 0;
-            let availableCrew = 0;
-            if (staffData && staffData.supervisors) {
-                availableSup = staffData.supervisors.filter(s => (s.Status || s.status) === 'AVAILABLE').length;
-            }
-            if (staffData && staffData.crew) {
-                availableCrew = staffData.crew.filter(c => (c.Status || c.status) === 'AVAILABLE').length;
-            }
-            const available = availableSup + availableCrew;
-            if (document.getElementById('overviewTotal')) document.getElementById('overviewTotal').textContent = total;
-            if (document.getElementById('overviewAvailable')) document.getElementById('overviewAvailable').textContent = available;
-            if (document.getElementById('overviewSupervisors')) document.getElementById('overviewSupervisors').textContent = totalSup;
-            if (document.getElementById('overviewCrew')) document.getElementById('overviewCrew').textContent = totalCrew;
-            // Compute certifications metrics
-            let active = 0;
-            let expiring = 0;
-            const today = new Date();
-            (certifications || []).forEach(cert => {
-                const expiry = cert.expiryDate || cert.Expiry_Date;
-                if (!expiry) return;
-                const expiryDate = new Date(expiry);
-                if (isNaN(expiryDate.getTime())) return;
-                const diff = (expiryDate.getTime() - today.getTime()) / 86400000;
-                const days = Math.floor(diff);
-                if (days < 0) return; // expired not counted
-                if (days <= 60) expiring++;
-                else active++;
-            });
-            if (document.getElementById('overviewCertified')) document.getElementById('overviewCertified').textContent = active + expiring;
-            if (document.getElementById('overviewCertActive')) document.getElementById('overviewCertActive').textContent = active;
-            if (document.getElementById('overviewCertExpiring')) document.getElementById('overviewCertExpiring').textContent = expiring;
-        } catch(e) {
-            console.error('updateStaffOverview error', e);
-        }
-    }
-
-    function openEditColumnModal(id) {
-        const col = columns.find(c => c.id === id);
-        if (!col) return;
-        $('#editColumnId').value = col.id;
-        $('#editColumnName').value = col.name;
-        $('#editColumnType').value = col.type;
-        $('#editColumnWidth').value = parseInt(col.width);
-        $('#editColumnRequired').value = col.required ? 'true' : 'false';
-        $('#editColumnDescription').value = col.description || '';
-        if (col.type === 'dropdown' || col.type === 'multiselect') {
-            $('#editColumnOptionsContainer').style.display = 'block';
-            $('#editColumnOptions').value = col.options ? col.options.join('\n') : '';
-        } else {
-            $('#editColumnOptionsContainer').style.display = 'none';
-            $('#editColumnOptions').value = '';
-        }
-        // Show modal
-        document.getElementById('modalEditColumn').classList.add('show');
-    }
     // Save edited column
     $('#btnSaveColumn').addEventListener('click', () => {
         const id = parseInt($('#editColumnId').value);
@@ -5350,207 +5126,8 @@ async function loadCertificationEmployees() {
         saveLocalConfig();
         showNotification('Column saved','success');
     });
-    </script>
-    <script>
-// OPSIS TimeSync integration script
-(function(){
-    async function postAction(action, body = {}) {
-        if (!gasUrl) {
-            showNotification('Configure API URL first','error');
-            return { ok:false };
-        }
-        try {
-            const res = await fetch(gasUrl, {
-                method:'POST',
-                headers:{ 'Content-Type':'application/json' },
-                body: JSON.stringify(Object.assign({ action }, body))
-            });
-            return await res.json();
-        } catch(err) {
-            console.error('postAction error', err);
-            return { ok:false, error: err.message };
-        }
-    }
-    function showLogin() { const m=document.getElementById('modalLogin'); if(m) m.classList.add('show'); }
-    function hideLogin() { const m=document.getElementById('modalLogin'); if(m) m.classList.remove('show'); }
-    async function doLogin() {
-        const userEl = document.getElementById('loginUsername');
-        const passEl  = document.getElementById('loginPassword');
-        const username = userEl ? userEl.value.trim() : '';
-        const pass  = passEl ? passEl.value : '';
-        if (!username || !pass) {
-            showNotification('Enter username and password','error');
-            return;
-        }
-        // Send username as email field for compatibility; backend can treat it as username
-        const res = await postAction('auth.login', { email: username, password: pass });
-        if (res.ok) {
-            opsisToken = res.token;
-            opsisRole  = res.role;
-            isLoggedIn = true;
-            saveLocalConfig();
-            hideLogin();
-            showNotification('Welcome '+ (res.name || username),'success');
-            loadDashboard();
-            loadSchedule();
-            loadStaff();
-        } else {
-            showNotification(res.error || 'Login failed','error');
-        }
-    }
-    async function testSheetConnection() {
-        const idEl = document.getElementById('sheetId');
-        if (!idEl) { showNotification('Spreadsheet input missing','error'); return; }
-        const id = idEl.value.trim();
-        if (!id) { showNotification('Enter Spreadsheet ID','error'); return; }
-        const res = await postAction('setup.test', { spreadsheetId:id });
-        const statusEl = document.getElementById('sheetStatus');
-        if (res.ok) {
-            opsisSheetId = id;
-            if (statusEl) statusEl.textContent = 'Connected: ' + res.name;
-            saveLocalConfig();
-            showNotification('Spreadsheet connected','success');
-        } else {
-            if (statusEl) statusEl.textContent = res.error || 'Connection failed';
-            showNotification(res.error || 'Connection failed','error');
-        }
-    }
-    async function ensureYear() {
-        const idEl = document.getElementById('sheetId');
-        const yearSel = document.getElementById('activeYearSelect');
-        const id = idEl ? idEl.value.trim() : '';
-        const yearVal = yearSel ? yearSel.value : '';
-        if (!id || !yearVal) { showNotification('Enter Spreadsheet ID and Year','error'); return; }
-        const res = await postAction('setup.ensureYear', { spreadsheetId:id, year: yearVal });
-        if (res.ok) {
-            showNotification('Year ' + yearVal + ' initialized','success');
-        } else {
-            showNotification(res.error || 'Init failed','error');
-        }
-    }
-    async function switchYearSheet() {
-        const idEl = document.getElementById('sheetId');
-        const yearSel = document.getElementById('activeYearSelect');
-        const id = idEl ? idEl.value.trim() : '';
-        const yearVal = yearSel ? yearSel.value : '';
-        if (!id || !yearVal) { showNotification('Enter Spreadsheet ID and Year','error'); return; }
-        const res = await postAction('setup.switchYear', { spreadsheetId:id, year: yearVal });
-        if (res.ok) {
-            activeYear = parseInt(yearVal);
-            saveLocalConfig();
-            showNotification('Active year set to ' + yearVal,'success');
-            loadSchedule();
-        } else {
-            showNotification(res.error || 'Switch failed','error');
-        }
-    }
-    async function readSchema() {
-        const idEl = document.getElementById('sheetId');
-        const sheetNameEl = document.getElementById('jobsSheetName');
-        const id = idEl ? idEl.value.trim() : '';
-        const sheetName = sheetNameEl ? sheetNameEl.value.trim() : '';
-        if (!id || !sheetName) { showNotification('Enter Spreadsheet ID and jobs sheet name','error'); return; }
-        const res = await postAction('schema.read', { spreadsheetId:id, jobsSheet: sheetName });
-        if (res.ok) {
-            schemaMapping = res.map || null;
-            renderSchemaEditor(res.headers, res.map);
-            showNotification('Schema loaded','success');
-        } else {
-            showNotification(res.error || 'Read schema failed','error');
-        }
-    }
-    async function appendReserved() {
-        const idEl = document.getElementById('sheetId');
-        const sheetNameEl = document.getElementById('jobsSheetName');
-        const id = idEl ? idEl.value.trim() : '';
-        const sheetName = sheetNameEl ? sheetNameEl.value.trim() : '';
-        if (!id || !sheetName) { showNotification('Enter Spreadsheet ID and jobs sheet name','error'); return; }
-        const res = await postAction('schema.appendReserved', { spreadsheetId:id, jobsSheet: sheetName });
-        if (res.ok) {
-            showNotification('Reserved columns appended','success');
-        } else {
-            showNotification(res.error || 'Failed to append','error');
-        }
-    }
-    async function saveSchemaMapping() {
-        const idEl = document.getElementById('sheetId');
-        const sheetNameEl = document.getElementById('jobsSheetName');
-        const id = idEl ? idEl.value.trim() : '';
-        const sheetName = sheetNameEl ? sheetNameEl.value.trim() : '';
-        if (!id || !sheetName) { showNotification('Enter Spreadsheet ID and jobs sheet name','error'); return; }
-        const selects = document.querySelectorAll('#schemaForm select');
-        const mapping = {};
-        selects.forEach(function(sel){ mapping[sel.dataset.key] = sel.value || null; });
-        const res = await postAction('schema.save', { spreadsheetId:id, jobsSheet: sheetName, schema: mapping });
-        if (res.ok) {
-            schemaMapping = mapping;
-            saveLocalConfig();
-            showNotification('Schema saved','success');
-        } else {
-            showNotification(res.error || 'Save schema failed','error');
-        }
-    }
-    function renderSchemaEditor(headers, map) {
-        const container = document.getElementById('schemaForm');
-        if (!container) return;
-        const fields = [ ['date','Date'], ['type','Type'], ['status','Status'], ['jobNumber','Job Number'], ['time','Time'], ['supervisor','Supervisor'], ['employee','Employee'], ['hours','Hours'], ['location','Location'], ['notes','Notes'], ['id','ID'], ['updatedAt','UpdatedAt'], ['year','Year'], ['deleted','_DELETED'] ];
-        let html = '';
-        fields.forEach(function(field) {
-            const key = field[0];
-            const label = field[1];
-            html += '<div class="form-row"><div class="form-group" style="flex:1;">';
-            html += '<label style="font-size:12px;">' + label + '</label>';
-            html += '<select data-key="' + key + '" class="form-control">';
-            html += '<option value="">â€” Unassigned â€”</option>';
-            headers.forEach(function(h) {
-                const sel = (map && map[key] === h) ? 'selected' : '';
-                html += '<option value="' + h + '" ' + sel + '>' + h + '</option>';
-            });
-            html += '</select></div></div>';
-        });
-        container.innerHTML = html;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-        if (!isLoggedIn) {
-            showLogin();
-        }
-        const loginBtn = document.getElementById('btnLogin');
-        if (loginBtn && !loginBtn.dataset.bound) {
-            loginBtn.addEventListener('click', doLogin);
-            loginBtn.dataset.bound = '1';
-        }
-        const testBtn = document.getElementById('btnTestSheet');
-        if (testBtn && !testBtn.dataset.bound) {
-            testBtn.addEventListener('click', testSheetConnection);
-            testBtn.dataset.bound = '1';
-        }
-        const ensureBtn = document.getElementById('btnEnsureYear');
-        if (ensureBtn && !ensureBtn.dataset.bound) {
-            ensureBtn.addEventListener('click', ensureYear);
-            ensureBtn.dataset.bound = '1';
-        }
-        const switchBtn = document.getElementById('btnSwitchYear');
-        if (switchBtn && !switchBtn.dataset.bound) {
-            switchBtn.addEventListener('click', switchYearSheet);
-            switchBtn.dataset.bound = '1';
-        }
-        const readBtn = document.getElementById('btnReadSchema');
-        if (readBtn && !readBtn.dataset.bound) {
-            readBtn.addEventListener('click', readSchema);
-            readBtn.dataset.bound = '1';
-        }
-        const appendBtn = document.getElementById('btnAppendReserved');
-        if (appendBtn && !appendBtn.dataset.bound) {
-            appendBtn.addEventListener('click', appendReserved);
-            appendBtn.dataset.bound = '1';
-        }
-        const saveBtn = document.getElementById('btnSaveSchema');
-        if (saveBtn && !saveBtn.dataset.bound) {
-            saveBtn.addEventListener('click', saveSchemaMapping);
-            saveBtn.dataset.bound = '1';
-        }
-    });
-    // After all definitions and event bindings, expose functions globally for inline handlers
+
+    // Expose commonly used modal helper functions globally
     window.openAddJobModal = openAddJobModal;
     window.openScheduleFilters = openScheduleFilters;
     window.refreshPage = refreshPage;
@@ -5559,8 +5136,8 @@ async function loadCertificationEmployees() {
     window.openUserModal = openUserModal;
     window.openUserModalClick = openUserModalClick;
     window.saveUser = saveUser;
-})();
+    window.switchPage = switchPage;
+    window.switchSubtab = switchSubtab;
 </script>
-
-
-</body></html>
+</body>
+</html>
