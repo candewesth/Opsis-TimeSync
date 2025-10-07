@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" style="--card: #ffffff; --card-hover: #f1f5f9; --text: #374151; --muted: #6b7280; --border: rgba(0,0,0,0.1); --modal-bg: #ffffff; --modal-text: #374151; --bg-dark-primary: #f7f9fc; --bg-dark-secondary: #e8edf5; --button-gradient-start: #4A90E2; --button-gradient-end: #357ABD; --gradient: linear-gradient(135deg, #4A90E2, #357ABD); --accent: #36bf6a; --module-border-color: #ff6b6b; --modal-border-color: #ff6b6b;">
+<html lang="en" data-theme="light">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,61 +21,47 @@
 
         /* Theme variables */
         :root {
-            /* TimeSync Blue Theme */
             --timesync-primary: #4A90E2;
             --timesync-secondary: #357ABD;
             --timesync-gradient: linear-gradient(135deg, var(--timesync-primary), var(--timesync-secondary));
-            /* Base colours and backgrounds for light mode */
             --bg: #f9fafb;
             --bg-dark-primary: #f9fafb;
             --bg-dark-secondary: #f3f4f6;
-            /* Cards use solid light background by default */
             --card: #ffffff;
             --card-hover: #f9fafb;
-            /* Text colours for light mode */
             --text: #1f2937;
             --muted: #6b7280;
-            /* Border colour for light mode */
             --border: #e5e7eb;
             --accent: var(--timesync-primary);
-            /* Brand colours */
             --brand-primary: #495057;
             --brand-secondary: #6c757d;
-            /* States */
             --success: #20c997;
             --warning: #ffc107;
             --error: #dc3545;
-            /* Typography */
             --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            /* Geometry and premium design */
             --border-radius-xl: 32px;
             --border-radius-lg: 24px;
             --border-radius-md: 16px;
             --card-padding: 3rem 2.5rem;
             --transition-smooth: 0.4s ease;
-            /* Primary palette mapping */
             --primary: var(--timesync-primary);
             --secondary: var(--timesync-secondary);
             --gradient: var(--timesync-gradient);
-            /* Card and hover effects */
             --card-radius: var(--border-radius-xl);
             --hover-lift: -15px;
             --card-shadow-y: 25px;
-            /* Modal and button customization variables */
             --modal-bg: var(--card);
             --modal-text: var(--text);
             --modal-radius: 24px;
             --button-gradient-start: var(--timesync-primary);
             --button-gradient-end: var(--timesync-secondary);
             --button-radius: 16px;
-            /* Border colours for each page */
             --dashboard-border: #ff6b6b;
             --schedule-border: #4ecdc4;
             --staff-border: #45b7d1;
             --reports-border: #5f27cd;
             --users-border: #ff9f43;
             --settings-border: #ee5a6f;
-            /* Current page border colour */
             --module-border-color: var(--dashboard-border);
             --modal-border-color: var(--dashboard-border);
         }
@@ -100,7 +86,6 @@
             font-family: inherit;
         }
         
-        /* Layout */
         .app {
             display: flex;
             height: 100vh;
@@ -116,15 +101,6 @@
             align-items: center;
             padding: 100px 0 12px;
             border-right: 1px solid #e5e7eb;
-        }
-        
-        .sidebar .logo {
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-
-        .sidebar .nav-logo-container.nav-logo-small {
-            margin-bottom: 24px;
         }
         
         .sidebar .nav-icon {
@@ -156,16 +132,11 @@
         .header {
             background: white;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            padding: 12px 20px;
+            padding: 20px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        
-        .header .title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1f2937;
+            border-bottom: 1px solid #e5e7eb;
         }
         
         .header .status {
@@ -173,10 +144,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
-        }
-        
-        .header .status span {
-            font-size: 18px;
+            color: var(--muted);
         }
         
         .content {
@@ -189,7 +157,6 @@
             display: block;
         }
         
-        /* Navigation tabs */
         .tabs {
             display: flex;
             gap: 0;
@@ -219,7 +186,6 @@
             background: #f9fafb;
         }
         
-        /* Cards and metrics */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -266,7 +232,6 @@
             display: block;
         }
         
-        /* Tables */
         .table-container {
             background: var(--card);
             border-radius: 8px;
@@ -321,7 +286,6 @@
             color: #9ca3af;
         }
         
-        /* Forms & inputs */
         .form-row {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -367,7 +331,6 @@
             box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
         }
         
-        /* Buttons */
         .btn {
             appearance: none;
             border: 1px solid #d1d5db;
@@ -415,7 +378,6 @@
             font-size: 11px;
         }
         
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -457,6 +419,7 @@
         
         .modal-footer {
             border-top: 1px solid #e5e7eb;
+            border-bottom: none;
         }
         
         .modal-title {
@@ -484,7 +447,6 @@
             color: #374151;
         }
         
-        /* Notification */
         .notification {
             position: fixed;
             top: 20px;
@@ -508,7 +470,6 @@
             to {opacity: 1; transform: translateX(0);}
         }
 
-        /* Logo and premium header styles */
         .header-left {
             display: flex;
             align-items: center;
@@ -529,19 +490,6 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .nav-logo-container.nav-logo-small {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            padding: 2px;
-        }
-
-        .nav-logo-container.nav-logo-small .nav-logo {
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
         }
         
         .nav-logo {
@@ -605,31 +553,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .status {
-            color: var(--muted);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
 
-        /* Background system */
         body::before {
             content: '';
             position: fixed;
@@ -668,14 +592,6 @@
             background: #f9fafb;
         }
 
-        #staff .modal-dialog,
-        #staffManagement .modal-dialog {
-            border-width: 2px;
-            border-style: solid;
-            border-color: var(--modal-border-color);
-        }
-
-        /* Schedule modules */
         .schedule-modules {
             display: flex;
             flex-wrap: nowrap;
@@ -714,10 +630,6 @@
             border-radius: 4px;
         }
         
-        .search-card input::placeholder {
-            color: #9ca3af;
-        }
-        
         .calendar-header {
             display: flex;
             justify-content: space-between;
@@ -739,10 +651,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .calendar-header button:hover {
-            background: #f9fafb;
         }
         
         .calendar-grid {
@@ -832,11 +740,6 @@
             margin-top: 4px;
         }
         
-        .specialties-list li {
-            font-size: 11px;
-            color: #374151;
-        }
-        
         .row-actions-card h3 {
             margin-top: 0;
             font-size: 14px;
@@ -903,11 +806,6 @@
             transform: translateX(14px);
         }
 
-        .stats-card .stats-list span {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
         .cert-status-critical {
             background: #fee2e2;
         }
@@ -920,7 +818,6 @@
             background: #ecfdf5;
         }
 
-        /* Column Manager - Drag & Drop */
         .column-row {
             cursor: move;
             transition: background 0.2s;
@@ -933,18 +830,12 @@
         .column-row.dragging {
             opacity: 0.5;
         }
-        
-        .column-row.drag-over {
-            border-top: 2px solid #3b82f6;
-        }
 
-        /* View mode buttons */
         .search-view button.active {
             background: #3b82f6;
             color: white;
         }
 
-        /* Skills Matrix Styles */
         .skills-matrix-container {
             overflow-x: auto;
             margin-top: 16px;
@@ -1007,29 +898,224 @@
             color: #10b981;
             font-size: 12px;
         }
-        
-        .skill-not-certified {
-            color: #d1d5db;
+
+        /* Reports Styles */
+        .reports-container {
+            padding: 24px;
+        }
+        .reports-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .reports-header .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .reports-header select,
+        .reports-header input {
+            padding: 4px 8px;
+            font-size: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            background: white;
+            min-width: 120px;
+        }
+        .reports-header .btn {
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+        .reports-header .last-sync {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+        .reports-kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .report-card {
+            background: var(--card);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 12px;
+            border: 2px solid var(--module-border-color);
+            color: var(--text);
+        }
+        .report-card .title {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        .report-card .value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .report-card .subtext {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+        .report-card .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 4px;
+        }
+        .report-card .progress-bar div {
+            height: 100%;
+            background: #3b82f6;
+            width: 0%;
+        }
+        .reports-panels-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .report-panel {
+            background: var(--card);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            padding: 16px;
+            flex: 1;
+            min-width: 220px;
+            border: 2px solid var(--module-border-color);
+            color: var(--text);
+        }
+        .report-panel h3 {
+            margin-top: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+        .worker-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .report-summary {
+            font-size: 12px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+        .bar-container {
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            margin-bottom: 6px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 3px;
+        }
+        .week-item {
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .alert-item {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+        .alert-item .badge {
+            padding: 1px 4px;
+            border-radius: 4px;
+            font-size: 10px;
+            margin-left: 4px;
+            background: #f3f4f6;
+        }
+        .alert-critical {
+            color: #991b1b;
+        }
+        .alert-warning {
+            color: #92400e;
+        }
+        .alert-ok {
+            color: #065f46;
+        }
+        .legend .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+        .legend .legend-item:hover {
+            text-decoration: underline;
+        }
+        .legend .color-box {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 6px;
+            border-radius: 2px;
+        }
+        .trend-item {
+            flex: 1;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            color: #374151;
+        }
+        .trend-item .bar-container {
+            width: 100%;
+            height: 40px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 4px;
+            overflow: hidden;
+        }
+        .trend-item .bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #3b82f6;
+            border-radius: 4px 4px 0 0;
         }
     </style>
 </head>
 <body>
 <div id="app" class="app">
-    <!-- Sidebar navigation -->
     <div class="sidebar">
-        <div class="nav-icon active" data-page="dashboard" title="Dashboard" onclick="switchPage('dashboard')">📊</div>
-        <div class="nav-icon" data-page="schedule" title="Schedule" onclick="switchPage('schedule')">📅</div>
-        <div class="nav-icon" data-page="staff" title="Staff" onclick="switchPage('staff')">👥</div>
-        <div class="nav-icon" data-page="reports" title="Reports" onclick="switchPage('reports')">📈</div>
-        <div class="nav-icon" data-page="users" title="Users" onclick="switchPage('users')">👤</div>
-        <div class="nav-icon" data-page="settings" title="Settings" onclick="switchPage('settings')">⚙️</div>
+        <div class="nav-icon active" data-page="dashboard" title="Dashboard">📊</div>
+        <div class="nav-icon" data-page="schedule" title="Schedule">📅</div>
+        <div class="nav-icon" data-page="staff" title="Staff">👥</div>
+        <div class="nav-icon" data-page="reports" title="Reports">📈</div>
+        <div class="nav-icon" data-page="users" title="Users">👤</div>
+        <div class="nav-icon" data-page="settings" title="Settings">⚙️</div>
     </div>
     
-    <!-- Main content -->
     <div class="main">
         <header class="header">
             <div class="header-left">
-                <a href="#" onclick="switchPage('dashboard')" title="Dashboard" class="header-logo">
+                <a href="#" onclick="switchPage('dashboard')" class="header-logo">
                     <div class="nav-logo-container">
                         <div class="nav-logo"></div>
                     </div>
@@ -1075,19 +1161,18 @@
         <div id="schedule" class="content">
             <div class="page-body" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
                 <div class="tabs">
-                    <button class="tab-btn active" data-subtab="jobs" onclick="switchSubtab('schedule','jobs')">Schedule</button>
-                    <button class="tab-btn" data-subtab="columns" onclick="switchSubtab('schedule','columns')">Column Manager</button>
-                    <button class="tab-btn" data-subtab="filters" onclick="switchSubtab('schedule','filters')">Filters</button>
+                    <button class="tab-btn active" data-subtab="jobs">Schedule</button>
+                    <button class="tab-btn" data-subtab="columns">Column Manager</button>
+                    <button class="tab-btn" data-subtab="filters">Filters</button>
                 </div>
                 
-                <!-- Subtab: Jobs -->
                 <div id="jobs" class="subtab-content" style="flex:1; display: flex; flex-direction: column;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                         <div>
-                            <button class="btn primary" id="btnAddJob" onclick="openAddJobModal()">➕ Add Job</button>
-                            <button class="btn" id="btnAdvancedFilters" onclick="openScheduleFilters()">🔍 Filters</button>
-                            <button class="btn" id="btnRefresh" onclick="refreshPage()">↻ Refresh</button>
-                            <button class="btn" id="btnExport" onclick="exportSchedule()">📥 Export CSV</button>
+                            <button class="btn primary" id="btnAddJob">➕ Add Job</button>
+                            <button class="btn" id="btnAdvancedFilters">🔍 Filters</button>
+                            <button class="btn" id="btnRefresh">↻ Refresh</button>
+                            <button class="btn" id="btnExport">📥 Export CSV</button>
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <label for="yearSelect">Year:</label>
@@ -1170,7 +1255,7 @@
                             </div>
                         </div>
                         
-                        <div class="card specialties-card" id="specialtiesSup">
+                        <div class="card specialties-card">
                             <h3>Supervisors Specialties</h3>
                             <ul class="specialties-list">
                                 <li>Asbestos: <span id="supAsbestosCount">0/0</span></li>
@@ -1184,7 +1269,7 @@
                             </ul>
                         </div>
                         
-                        <div class="card specialties-card" id="specialtiesCrew">
+                        <div class="card specialties-card">
                             <h3>Crew Specialties</h3>
                             <ul class="specialties-list">
                                 <li>Asbestos: <span id="crewAsbestosCount">0/0</span></li>
@@ -1227,13 +1312,12 @@
                     </div>
                 </div>
                 
-                <!-- Subtab: Column Manager -->
                 <div id="columns" class="subtab-content" style="display: none; overflow:auto;">
                     <div class="table-container" style="margin-bottom: 24px;">
                         <div class="table-header">Column Manager</div>
                         <div style="padding:16px; background:white;">
                             <div style="margin-bottom:12px; font-size:12px; color:#374151;">
-                                Configure visibility, widths, and options for each column. Changes are stored locally. Drag rows to reorder columns.
+                                Configure visibility, widths, and options for each column. Drag rows to reorder.
                             </div>
                             <div style="margin-bottom: 8px;">
                                 <button class="btn" id="btnAddColumn">➕ Add Column</button>
@@ -1260,7 +1344,6 @@
                     </div>
                 </div>
                 
-                <!-- Subtab: Filters -->
                 <div id="filters" class="subtab-content" style="display: none; overflow:auto;">
                     <div class="card" style="margin-bottom: 24px;">
                         <h3 style="font-size: 16px; font-weight:600; margin-bottom:16px;">Advanced Filters</h3>
@@ -1272,18 +1355,6 @@
                             <div class="form-group">
                                 <label>Date To</label>
                                 <input type="date" id="filterDateTo" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Job Number</label>
-                                <input type="text" id="filterJobNumber" class="form-control" placeholder="Job #">
-                            </div>
-                            <div class="form-group">
-                                <label>PM / Estimator</label>
-                                <select id="filterPM" class="form-control">
-                                    <option value="">All</option>
-                                </select>
                             </div>
                         </div>
                         <div style="margin-top: 16px;">
@@ -1299,11 +1370,11 @@
         <div id="staff" class="content">
             <div class="page-body" style="padding: 24px; display:flex; flex-direction:column; height: 100%;">
                 <div class="tabs">
-                    <button class="tab-btn active" data-stafftab="overview" onclick="switchSubtab('staff','overview')">Overview</button>
-                    <button class="tab-btn" data-stafftab="supervisors" onclick="switchSubtab('staff','supervisors')">Supervisors</button>
-                    <button class="tab-btn" data-stafftab="crew" onclick="switchSubtab('staff','crew')">Crew Members</button>
-                    <button class="tab-btn" data-stafftab="skills" onclick="switchSubtab('staff','skills')">Skills Matrix</button>
-                    <button class="tab-btn" data-stafftab="certifications" onclick="switchSubtab('staff','certifications')">Certifications</button>
+                    <button class="tab-btn active" data-stafftab="overview">Overview</button>
+                    <button class="tab-btn" data-stafftab="supervisors">Supervisors</button>
+                    <button class="tab-btn" data-stafftab="crew">Crew Members</button>
+                    <button class="tab-btn" data-stafftab="skills">Skills Matrix</button>
+                    <button class="tab-btn" data-stafftab="certifications">Certifications</button>
                 </div>
                 
                 <div id="overview" class="staff-content" style="flex:1; overflow:auto;">
@@ -1422,10 +1493,120 @@
         
         <!-- Reports Page -->
         <div id="reports" class="content">
-            <div style="padding: 24px;">
-                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">Reports Dashboard</h2>
-                <div class="empty" style="padding: 60px; text-align: center;">
-                    Reports feature coming soon
+            <div class="reports-container">
+                <div class="reports-header">
+                    <div class="filters">
+                        <select id="reportPeriod">
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month" selected>This Month</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                        <input type="date" id="reportFrom" style="display:none;">
+                        <input type="date" id="reportTo" style="display:none;">
+                        <select id="reportSupervisor"></select>
+                        <select id="reportLocation"></select>
+                        <select id="reportStatus"></select>
+                        <select id="reportPosition"></select>
+                        <button class="btn small" id="reportRefresh">Update</button>
+                        <button class="btn small" id="reportExport">Export CSV</button>
+                        <button class="btn small" id="reportCompare">Compare</button>
+                    </div>
+                    <div class="last-sync" id="reportLastSync">Last updated just now</div>
+                </div>
+                
+                <div class="reports-kpis">
+                    <div class="report-card">
+                        <div class="title">Total Jobs</div>
+                        <div class="value" id="kpiTotalJobs">0</div>
+                        <div class="subtext">Jobs in period</div>
+                    </div>
+                    <div class="report-card">
+                        <div class="title">Completed / Pending</div>
+                        <div class="value"><span id="kpiCompleted">0</span> / <span id="kpiPending">0</span></div>
+                        <div class="subtext">
+                            <div class="progress-bar"><div id="kpiProgressBar"></div></div>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="title">Total Hours</div>
+                        <div class="value" id="kpiHours">0</div>
+                        <div class="subtext">Hours worked</div>
+                    </div>
+                    <div class="report-card">
+                        <div class="title">Efficiency</div>
+                        <div class="value" id="kpiEfficiency">0%</div>
+                        <div class="subtext">Completed / Total</div>
+                    </div>
+                    <div class="report-card">
+                        <div class="title">Avg Efficiency</div>
+                        <div class="value" id="kpiAvgEff">0%</div>
+                        <div class="subtext">Per worker</div>
+                    </div>
+                    <div class="report-card">
+                        <div class="title">Alerts</div>
+                        <div class="value" id="kpiAlerts">0</div>
+                        <div class="subtext">Issues</div>
+                    </div>
+                </div>
+                
+                <div class="reports-panels-row">
+                    <div class="report-panel">
+                        <h3>Status Distribution</h3>
+                        <div class="donut-chart" id="statusDonutChart" style="position:relative; width:140px; height:140px; border-radius:50%; margin:0 auto;">
+                            <div class="donut-center" id="statusDonutCenter" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:600; color:#374151; box-shadow:0 0 0 2px #e5e7eb;"></div>
+                        </div>
+                        <div class="legend" id="statusLegend"></div>
+                    </div>
+                    <div class="report-panel">
+                        <h3>Productivity by Worker</h3>
+                        <div id="productivityList"></div>
+                    </div>
+                </div>
+                
+                <div class="reports-panels-row">
+                    <div class="report-panel">
+                        <h3>Equipment State</h3>
+                        <div id="equipmentSummary"></div>
+                    </div>
+                    <div class="report-panel">
+                        <h3>Financial Analysis</h3>
+                        <div id="financeSummary"></div>
+                    </div>
+                    <div class="report-panel">
+                        <h3>Human Resources</h3>
+                        <div id="hrSummary"></div>
+                    </div>
+                </div>
+                
+                <div class="reports-panels-row">
+                    <div class="report-panel">
+                        <h3>Weekly Summary</h3>
+                        <div id="weeklySummary"></div>
+                    </div>
+                    <div class="report-panel">
+                        <h3>Alerts & Notifications</h3>
+                        <div id="alertsList"></div>
+                    </div>
+                </div>
+                
+                <div class="reports-trends" style="margin-bottom:20px;">
+                    <h3 style="font-size:14px; font-weight:600; margin-bottom:12px; color:#374151;">Jobs Trend</h3>
+                    <div id="jobsTrendList" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+                </div>
+                
+                <div class="reports-table">
+                    <h3 style="margin-top:0; font-size:14px; font-weight:600; color:#374151; margin-bottom:12px;">Detailed Jobs</h3>
+                    <div class="table-container">
+                        <div style="overflow-x:auto;">
+                            <table>
+                                <thead>
+                                    <tr id="reportsTableHeaders"></tr>
+                                </thead>
+                                <tbody id="reportsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1470,10 +1651,6 @@
                             This system uses Supabase. Configure your credentials in <code>config.js</code>.
                         </p>
                         <div class="form-group">
-                            <label>Supabase Project URL</label>
-                            <input type="text" class="form-control" placeholder="https://xxxxx.supabase.co" readonly style="background:#f3f4f6;">
-                        </div>
-                        <div class="form-group">
                             <label>Status</label>
                             <div id="apiStatus" style="padding:8px; border-radius:4px; background:#ecfdf5; color:#065f46; font-size:12px;">
                                 Check browser console for connection status
@@ -1488,12 +1665,12 @@
                         <div class="form-group">
                             <label>Theme Mode</label>
                             <select id="themeSelect" class="form-control">
-                                <option value="light">Light</option>
+                                <option value="light" selected>Light</option>
                                 <option value="dark">Dark</option>
                             </select>
                         </div>
                         <p style="margin-top:12px; font-size:0.85rem; color: var(--muted);">
-                            Modal and module borders automatically use the logo's colours. In light mode, backgrounds are light with dark text; in dark mode, backgrounds are dark with light text.
+                            Modal and module borders use the logo's colours.
                         </p>
                     </div>
                 </div>
@@ -1502,7 +1679,7 @@
     </div>
 </div>
 
-<!-- Modals -->
+<!-- MODALS -->
 <!-- Add Job Modal -->
 <div class="modal" id="modalAddJob">
     <div class="modal-dialog">
@@ -1531,8 +1708,6 @@
                                 <option>JOB</option>
                                 <option>REPAIR</option>
                                 <option>TEARDOWN</option>
-                                <option>PICK UP EQ</option>
-                                <option>TD & EQ</option>
                             </select>
                         </div>
                     </div>
@@ -1557,57 +1732,15 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Progress</label>
-                            <select name="progress" class="form-control">
-                                <option>NEW</option>
-                                <option>0%</option>
-                                <option>25%</option>
-                                <option>50%</option>
-                                <option>75%</option>
-                                <option>100%</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Location</label>
-                            <select name="location" class="form-control">
-                                <option>LOCAL</option>
-                                <option>OUT OF TOWN</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <div class="jobtab" id="teamTab" style="display:none; padding-top:16px;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Project Manager</label>
-                            <select name="pm" class="form-control">
-                                <option value="">Select PM</option>
-                                <option>BC</option>
-                                <option>BS</option>
-                                <option>JC</option>
-                                <option>MD</option>
-                                <option>RC</option>
-                                <option>SP</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Position</label>
-                            <select name="position" class="form-control">
-                                <option>REGULAR</option>
-                                <option>STATE</option>
-                                <option>FEDERAL</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label>Supervisor</label>
-                        <input type="text" name="supervisor" class="form-control" placeholder="Select from staff list">
+                        <input type="text" name="supervisor" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Crew Members</label>
-                        <input type="text" name="crew" class="form-control" placeholder="Select from staff list">
+                        <input type="text" name="crew" class="form-control">
                     </div>
                 </div>
                 <div class="jobtab" id="complianceTab" style="display:none; padding-top:16px;">
@@ -1623,24 +1756,7 @@
                             <label>Manifest</label>
                             <select name="manifest" class="form-control">
                                 <option>No</option>
-                                <option>Haz Manifest</option>
-                                <option>Non-Haz Manifest</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Notified</label>
-                            <select name="notified" class="form-control">
                                 <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Scheduled</label>
-                            <select name="scheduled" class="form-control">
-                                <option>Yes</option>
-                                <option>No</option>
                             </select>
                         </div>
                     </div>
@@ -1649,10 +1765,6 @@
                     <div class="form-group">
                         <label>Notes</label>
                         <textarea name="notes" class="form-control" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Manifest Notes</label>
-                        <textarea name="manifest_notes" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
             </form>
@@ -1692,33 +1804,23 @@
                     <label>Full Name <span class="required">*</span></label>
                     <input type="text" name="fullName" class="form-control" required>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Role</label>
-                        <input type="text" name="role" class="form-control" value="SUPERVISOR" readonly style="background:#f3f4f6;">
-                    </div>
-                    <div class="form-group">
-                        <label>Division</label>
-                        <select name="division" class="form-control">
-                            <option value="ASBESTOS">Asbestos</option>
-                            <option value="LEAD">Lead Paint</option>
-                            <option value="MOLD">Mold</option>
-                            <option value="BIO_HAZARD">Bio Hazard</option>
-                            <option value="BACTERIA">Bacteria</option>
-                            <option value="GENERAL">General</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label>Division</label>
+                    <select name="division" class="form-control">
+                        <option value="ASBESTOS">Asbestos</option>
+                        <option value="LEAD">Lead Paint</option>
+                        <option value="MOLD">Mold</option>
+                        <option value="GENERAL">General</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>Specialties (Ctrl/Cmd to select)</label>
+                    <label>Specialties (Ctrl/Cmd to select multiple)</label>
                     <select name="specialties" class="form-control" multiple style="height:100px;">
                         <option value="Asbestos">Asbestos</option>
                         <option value="Lead Paint">Lead Paint</option>
                         <option value="Mold">Mold</option>
                         <option value="Bio Hazard">Bio Hazard</option>
                         <option value="Bacteria">Bacteria</option>
-                        <option value="Contents">Contents</option>
-                        <option value="Duct Cleaning">Duct Cleaning</option>
                         <option value="Driver">Driver</option>
                     </select>
                 </div>
@@ -1750,8 +1852,6 @@
                         <select name="status" class="form-control">
                             <option value="AVAILABLE">Available</option>
                             <option value="ASSIGNED">Assigned</option>
-                            <option value="OFF">Off</option>
-                            <option value="VACATION">Vacation</option>
                         </select>
                     </div>
                 </div>
@@ -1759,33 +1859,12 @@
                     <label>Full Name <span class="required">*</span></label>
                     <input type="text" name="fullName" class="form-control" required>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Role</label>
-                        <input type="text" name="role" class="form-control" value="CREW" readonly style="background:#f3f4f6;">
-                    </div>
-                    <div class="form-group">
-                        <label>Division</label>
-                        <select name="division" class="form-control">
-                            <option value="ASBESTOS">Asbestos</option>
-                            <option value="LEAD">Lead Paint</option>
-                            <option value="MOLD">Mold</option>
-                            <option value="BIO_HAZARD">Bio Hazard</option>
-                            <option value="BACTERIA">Bacteria</option>
-                            <option value="GENERAL">General</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label>Specialties (Ctrl/Cmd to select)</label>
                     <select name="specialties" class="form-control" multiple style="height:100px;">
                         <option value="Asbestos">Asbestos</option>
                         <option value="Lead Paint">Lead Paint</option>
                         <option value="Mold">Mold</option>
-                        <option value="Bio Hazard">Bio Hazard</option>
-                        <option value="Bacteria">Bacteria</option>
-                        <option value="Contents">Contents</option>
-                        <option value="Duct Cleaning">Duct Cleaning</option>
                         <option value="Driver">Driver</option>
                     </select>
                 </div>
@@ -1794,38 +1873,6 @@
         <div class="modal-footer">
             <button class="btn" onclick="closeModal('modalAddCrew')">Cancel</button>
             <button class="btn primary" id="btnSaveCrew">Save</button>
-        </div>
-    </div>
-</div>
-
-<!-- Add Skill Modal -->
-<div class="modal" id="modalAddSkill">
-    <div class="modal-dialog" style="max-width:500px;">
-        <div class="modal-header">
-            <h2 class="modal-title">Add New Skill</h2>
-            <button class="close-btn" onclick="closeModal('modalAddSkill')">×</button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label>Skill Name <span class="required">*</span></label>
-                <input type="text" id="newSkillName" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Type</label>
-                <select id="newSkillType" class="form-control">
-                    <option value="certification">Certification</option>
-                    <option value="specialty">Specialty</option>
-                    <option value="evaluation">Evaluation</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <textarea id="newSkillDescription" class="form-control" rows="3"></textarea>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" onclick="closeModal('modalAddSkill')">Cancel</button>
-            <button class="btn primary" id="btnSaveSkill">Add</button>
         </div>
     </div>
 </div>
@@ -1853,13 +1900,7 @@
                         <option value="LEAD_CERT">Lead Paint Certification</option>
                         <option value="MOLD_CERT">Mold Certification</option>
                         <option value="OSHA_30">OSHA 30</option>
-                        <option value="OSHA_40">OSHA 40</option>
-                        <option value="FIRST_AID">First Aid</option>
                         <option value="CPR">CPR</option>
-                        <option value="MEDICAL_EXAM">Medical Exam</option>
-                        <option value="PHYSICAL_EXAM">Physical Exam</option>
-                        <option value="COMPANY_TRAINING">Company Training</option>
-                        <option value="OTHER">Other</option>
                     </select>
                 </div>
                 <div class="form-row">
@@ -1875,10 +1916,6 @@
                 <div class="form-group">
                     <label>Certification Number</label>
                     <input type="text" name="certNumber" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Notes</label>
-                    <textarea name="notes" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Attachment (PDF)</label>
@@ -1922,16 +1959,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Certification Number</label>
-                    <input type="text" name="certNumber" class="form-control">
-                </div>
-                <div class="form-group">
                     <label>Notes</label>
                     <textarea name="notes" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Attachment (PDF)</label>
-                    <div id="existingCertFile" style="margin-bottom:4px;"></div>
+                    <div id="existingCertFile"></div>
                     <input type="file" id="editCertFile" accept=".pdf" class="form-control">
                 </div>
             </form>
@@ -1940,65 +1973,6 @@
             <button class="btn" onclick="closeModal('modalEditCertification')">Cancel</button>
             <button class="btn primary" id="btnUpdateCertification">Update</button>
             <button class="btn danger" id="btnDeleteCertification">Delete</button>
-        </div>
-    </div>
-</div>
-
-<!-- Column Edit Modal -->
-<div class="modal" id="modalEditColumn">
-    <div class="modal-dialog" style="max-width:700px;">
-        <div class="modal-header">
-            <h2 class="modal-title">Edit Column</h2>
-            <button class="close-btn" onclick="closeModal('modalEditColumn')">×</button>
-        </div>
-        <div class="modal-body">
-            <form id="formEditColumn">
-                <input type="hidden" id="editColumnId">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Column Name <span class="required">*</span></label>
-                        <input type="text" id="editColumnName" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Type <span class="required">*</span></label>
-                        <select id="editColumnType" class="form-control">
-                            <option value="text">Text</option>
-                            <option value="textarea">Text (Long)</option>
-                            <option value="number">Number</option>
-                            <option value="currency">Currency</option>
-                            <option value="date">Date</option>
-                            <option value="dropdown">Dropdown</option>
-                            <option value="multiselect">Multiselect</option>
-                            <option value="checkbox">Checkbox</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Width</label>
-                        <input type="number" id="editColumnWidth" class="form-control" min="50" max="500" step="10" value="120">
-                    </div>
-                    <div class="form-group">
-                        <label>Required</label>
-                        <select id="editColumnRequired" class="form-control">
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group" id="editColumnOptionsContainer" style="display:none;">
-                    <label>Dropdown Options (one per line)</label>
-                    <textarea id="editColumnOptions" class="form-control" rows="4" placeholder="Option 1\nOption 2\nOption 3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="editColumnDescription" class="form-control" rows="2" placeholder="Optional description"></textarea>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" onclick="closeModal('modalEditColumn')">Cancel</button>
-            <button class="btn primary" id="btnSaveColumn">Save</button>
         </div>
     </div>
 </div>
@@ -2013,36 +1987,14 @@
         <div class="modal-body">
             <div class="form-group">
                 <label>Column Name <span class="required">*</span></label>
-                <input type="text" id="addColumnName" class="form-control" placeholder="Name (use underscores)">
+                <input type="text" id="addColumnName" class="form-control">
             </div>
             <div class="form-group">
-                <label>Column Type <span class="required">*</span></label>
+                <label>Column Type</label>
                 <select id="addColumnType" class="form-control">
-                    <option value="text">Text (Short)</option>
-                    <option value="textarea">Text (Long)</option>
-                    <option value="number">Number</option>
-                    <option value="currency">Currency</option>
+                    <option value="text">Text</option>
                     <option value="date">Date</option>
-                    <option value="dropdown">Dropdown (Single Select)</option>
-                    <option value="multiselect">Multi-Select</option>
-                    <option value="checkbox">Checkbox</option>
-                </select>
-            </div>
-            <div id="addColumnOptionsContainer" class="form-group" style="display:none;">
-                <label>Options (one per line)</label>
-                <textarea id="addColumnOptions" class="form-control" rows="4" placeholder="Option 1
-Option 2
-Option 3"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Width (px)</label>
-                <input type="number" id="addColumnWidth" class="form-control" value="120" min="30">
-            </div>
-            <div class="form-group">
-                <label>Required</label>
-                <select id="addColumnRequired" class="form-control">
-                    <option value="false">No</option>
-                    <option value="true">Yes</option>
+                    <option value="dropdown">Dropdown</option>
                 </select>
             </div>
             <div class="form-group">
@@ -2089,13 +2041,6 @@ Option 3"></textarea>
                         <option value="USER" selected>USER</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Active</label>
-                    <select id="userActive" class="form-control">
-                        <option value="true" selected>Active</option>
-                        <option value="false">Inactive</option>
-                    </select>
-                </div>
             </form>
         </div>
         <div class="modal-footer">
@@ -2105,11 +2050,10 @@ Option 3"></textarea>
     </div>
 </div>
 
-<!-- Notifications container -->
 <div id="notificationContainer"></div>
 
 <script>
-    // Global state
+    // ============ GLOBAL STATE ============
     let currentPage = 'dashboard';
     let currentSubtab = { schedule: 'jobs', staff: 'overview', settings: 'general' };
     let jobs = [];
@@ -2126,9 +2070,28 @@ Option 3"></textarea>
     let currentCalendarMonth = null;
     let selectedRowIndex = null;
     
+    // Reports state
+    let reportsInitialized = false;
+    let reportJobs = [];
+    let reportFilteredJobs = [];
+    let reportLastSync = null;
+    
     const STATUS_LIST = ['JOB','REPAIR','TEARDOWN','PICK UP EQ','CLASS','MEDICAL','VACATION','GO BACK','LIGHT DUTY'];
     const POSITION_LIST = ['REGULAR','STATE','FEDERAL'];
     const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+    
+    const REPORT_STATUS_LIST = ['JOB','REPAIR','TEARDOWN','PICK UP EQ','CLASS','MEDICAL','VACATION','GO BACK','LIGHT DUTY'];
+    const REPORT_STATUS_COLORS = {
+        'JOB': '#3b82f6',
+        'REPAIR': '#ef4444',
+        'TEARDOWN': '#f59e0b',
+        'PICK UP EQ': '#ec4899',
+        'CLASS': '#8b5cf6',
+        'MEDICAL': '#10b981',
+        'VACATION': '#6ee7b7',
+        'GO BACK': '#6366f1',
+        'LIGHT DUTY': '#d97706'
+    };
     
     const DEFAULT_SCHEMA = [
         {id:1,name:'date',type:'date',required:true,visible:true,width:'120px'},
@@ -2139,26 +2102,12 @@ Option 3"></textarea>
         {id:6,name:'crew',type:'text',visible:true,width:'250px'},
         {id:7,name:'job_address',type:'textarea',required:true,visible:true,width:'300px'},
         {id:8,name:'status',type:'dropdown',visible:true,width:'120px',options:['JOB','REPAIR','TEARDOWN']},
-        {id:9,name:'progress',type:'dropdown',visible:true,width:'100px',options:['NEW','RETURN','HOLD','0%','25%','50%','75%','100%']},
+        {id:9,name:'progress',type:'dropdown',visible:true,width:'100px',options:['NEW','0%','25%','50%','75%','100%']},
         {id:10,name:'position',type:'dropdown',visible:true,width:'100px',options:['REGULAR','STATE','FEDERAL']},
-        {id:11,name:'location',type:'dropdown',visible:true,width:'100px',options:['LOCAL','OUT OF TOWN']},
-        {id:12,name:'disposal',type:'text',visible:false,width:'100px'},
-        {id:13,name:'manifest',type:'text',visible:false,width:'100px'},
-        {id:14,name:'notified',type:'dropdown',visible:false,width:'80px',options:['Yes','No']},
-        {id:15,name:'osha',type:'dropdown',visible:false,width:'80px',options:['Yes','No']},
-        {id:16,name:'mp_total',type:'number',visible:false,width:'100px'},
-        {id:17,name:'mp_used',type:'number',visible:false,width:'100px'},
-        {id:18,name:'mp_active',type:'number',visible:false,width:'100px'},
-        {id:19,name:'change_order',type:'currency',visible:false,width:'120px'},
-        {id:20,name:'scheduled',type:'dropdown',visible:false,width:'80px',options:['Yes','No']},
-        {id:21,name:'folder',type:'text',visible:false,width:'100px'},
-        {id:22,name:'hotel',type:'text',visible:false,width:'120px'},
-        {id:23,name:'call_off',type:'text',visible:false,width:'120px'},
-        {id:24,name:'notes',type:'textarea',visible:false,width:'300px'},
-        {id:25,name:'manifest_notes',type:'textarea',visible:false,width:'300px'}
+        {id:11,name:'location',type:'dropdown',visible:true,width:'100px',options:['LOCAL','OUT OF TOWN']}
     ];
 
-    // Helpers
+    // ============ HELPERS ============
     function $(selector) {
         return document.querySelector(selector);
     }
@@ -2193,12 +2142,10 @@ Option 3"></textarea>
                 columns = [];
             }
         }
-        
         const savedTheme = localStorage.getItem('opsis_theme') || 'light';
         applyTheme(savedTheme);
     }
 
-    // API call helper
     async function callAPI(action, payload = {}) {
         try {
             updateConnectionIndicator(true);
@@ -2241,12 +2188,6 @@ Option 3"></textarea>
                     return await API.getSkills();
                 case 'getEmployeeSkills':
                     return await API.getEmployeeSkills();
-                case 'addEmployeeSkill':
-                    return await API.addEmployeeSkill(payload);
-                case 'updateEmployeeSkill':
-                    return await API.updateEmployeeSkill(payload.id, payload.updates);
-                case 'deleteEmployeeSkill':
-                    return await API.deleteEmployeeSkill(payload.id);
                 default:
                     console.log('Action not implemented:', action);
                     return { success: true };
@@ -2269,7 +2210,6 @@ Option 3"></textarea>
         }
     }
 
-    // Theme application - FIXED: Removed 'auto' mode interference
     function applyTheme(mode) {
         const root = document.documentElement;
         localStorage.setItem('opsis_theme', mode);
@@ -2297,16 +2237,9 @@ Option 3"></textarea>
             root.style.setProperty('--bg-dark-secondary', '#e8edf5');
             document.body.style.background = 'linear-gradient(135deg, #f7f9fc 0%, #e8edf5 100%)';
         }
-        
-        const primary = getComputedStyle(root).getPropertyValue('--timesync-primary').trim();
-        const secondary = getComputedStyle(root).getPropertyValue('--timesync-secondary').trim();
-        root.style.setProperty('--button-gradient-start', primary);
-        root.style.setProperty('--button-gradient-end', secondary);
-        root.style.setProperty('--gradient', 'linear-gradient(135deg, ' + primary + ', ' + secondary + ')');
-        root.style.setProperty('--accent', primary);
     }
 
-    // Navigation
+    // ============ NAVIGATION ============
     function switchPage(page) {
         currentPage = page;
         document.querySelectorAll('.nav-icon').forEach(icon => {
@@ -2332,10 +2265,17 @@ Option 3"></textarea>
         if (page === 'dashboard') loadDashboard();
         if (page === 'schedule') loadSchedule();
         if (page === 'staff') loadStaff();
+        if (page === 'reports') {
+            if (!reportsInitialized) {
+                initReportsPage();
+                reportsInitialized = true;
+            } else {
+                loadReports();
+            }
+        }
         if (page === 'users') loadUsers();
     }
 
-    // Subtabs
     function switchSubtab(section, tab) {
         currentSubtab[section] = tab;
         if (section === 'schedule') {
@@ -2367,7 +2307,7 @@ Option 3"></textarea>
         }
     }
 
-    // Dashboard Data
+    // ============ DASHBOARD ============
     async function loadDashboard() {
         const result = await callAPI('getDashboardStats');
         if (result.success) {
@@ -2379,7 +2319,7 @@ Option 3"></textarea>
         }
     }
 
-    // Schedule Data
+    // ============ SCHEDULE ============
     async function loadSchedule() {
         const year = parseInt($('#yearSelect').value);
         const month = $('#monthSelect').value;
@@ -2403,7 +2343,6 @@ Option 3"></textarea>
         
         let visibleCols = columns.length ? columns.filter(c => c.visible) : DEFAULT_SCHEMA.filter(c=>c.visible);
         
-        // FIXED: Apply view mode filters
         if (viewMode === 'simple') {
             visibleCols = visibleCols.filter(c => ['date','job_number','status','job_address'].includes(c.name));
         } else if (viewMode === 'extended') {
@@ -2430,12 +2369,6 @@ Option 3"></textarea>
                 if (col.type === 'date' && value) {
                     const date = new Date(value);
                     value = date.toLocaleDateString('en-US');
-                }
-                if (col.type === 'currency' && value) {
-                    value = parseFloat(value).toLocaleString('en-US',{style:'currency',currency:'USD'});
-                }
-                if (Array.isArray(value)) {
-                    return `<td>${value.join(', ')}</td>`;
                 }
                 return `<td>${value}</td>`;
             }).join('') + `</tr>`;
@@ -2523,9 +2456,7 @@ Option 3"></textarea>
         const now = new Date();
         const entry = `${now.toLocaleString()} • ${action} ${jobNumber || ''} — ${message}`;
         operationLogs.unshift(entry);
-        if (operationLogs.length > 50) {
-            operationLogs.pop();
-        }
+        if (operationLogs.length > 50) operationLogs.pop();
         const logContainer = document.getElementById('operationsLog');
         if (logContainer) {
             logContainer.innerHTML = operationLogs.map(l => `<div class="log-entry">${l}</div>`).join('');
@@ -2547,18 +2478,11 @@ Option 3"></textarea>
         const dateVal = job.date;
         form.date.value = dateVal ? new Date(dateVal).toISOString().split('T')[0] : '';
         form.time.value = job.time || '';
-        form.progress.value = job.progress || '';
-        form.location.value = job.location || '';
-        form.pm.value = job.pm || '';
-        form.position.value = job.position || '';
         form.supervisor.value = job.supervisor || '';
         form.crew.value = job.crew || '';
         form.osha.value = job.osha || '';
         form.manifest.value = job.manifest || '';
-        form.notified.value = job.notified || '';
-        form.scheduled.value = job.scheduled || '';
         form.notes.value = job.notes || '';
-        form.manifest_notes.value = job.manifest_notes || '';
         
         document.getElementById('modalAddJob').classList.add('show');
         document.querySelectorAll('#modalAddJob .jobtab').forEach(c => c.style.display='none');
@@ -2597,9 +2521,7 @@ Option 3"></textarea>
         const rowId = job.row_id;
         if (!rowId) return;
         if (!confirm('Are you sure you want to delete this job?')) return;
-        const year = parseInt($('#yearSelect').value);
-        const month = $('#monthSelect').value;
-        const res = await callAPI('deleteJob', {rowId, year, month});
+        const res = await callAPI('deleteJob', {rowId});
         if (res.success) {
             addOperationLog('Delete', job.job_number || '', 'Job deleted');
             showNotification('Job deleted','success');
@@ -2609,7 +2531,7 @@ Option 3"></textarea>
         }
     }
 
-    // Staff Data
+    // ============ STAFF ============
     async function loadStaff() {
         try {
             await loadSupervisors();
@@ -2641,11 +2563,11 @@ Option 3"></textarea>
                     return `<tr>
                         <td>${s.employee_number || ''}</td>
                         <td>${s.full_name || ''}</td>
-                        <td><span class="badge badge-info">${s.role}</span></td>
-                        <td><span class="badge ${s.status==='AVAILABLE'? 'badge-success':'badge-warning'}">${s.status}</span></td>
+                        <td>${s.role}</td>
+                        <td>${s.status}</td>
                         <td>${s.division || ''}</td>
                         <td>${specialtiesStr}</td>
-                        <td><button class="btn small" data-edit="supervisor" data-id="${s.employee_number}">Edit</button> <button class="btn small danger" data-delete="supervisor" data-id="${s.employee_number}">Delete</button></td>
+                        <td><button class="btn small">Edit</button></td>
                     </tr>`;
                 }).join('');
             }
@@ -2675,11 +2597,11 @@ Option 3"></textarea>
                     return `<tr>
                         <td>${c.employee_number || ''}</td>
                         <td>${c.full_name || ''}</td>
-                        <td><span class="badge badge-info">${c.role}</span></td>
-                        <td><span class="badge ${c.status==='AVAILABLE'? 'badge-success':'badge-warning'}">${c.status}</span></td>
+                        <td>${c.role}</td>
+                        <td>${c.status}</td>
                         <td>${c.division || ''}</td>
                         <td>${specialtiesStr}</td>
-                        <td><button class="btn small" data-edit="crew" data-id="${c.employee_number}">Edit</button> <button class="btn small danger" data-delete="crew" data-id="${c.employee_number}">Delete</button></td>
+                        <td><button class="btn small">Edit</button></td>
                     </tr>`;
                 }).join('');
             }
@@ -2709,13 +2631,9 @@ Option 3"></textarea>
             const arr = Array.isArray(specs) ? specs : specs.toString().split(',').map(sp => sp.trim());
             arr.forEach(sp => {
                 specKeys.forEach(k => {
-                    const spSan = sp.toLowerCase().replace(/\s+/g,'');
-                    const keySan = k.toLowerCase().replace(/\s+/g,'');
-                    if (spSan.includes(keySan)) {
+                    if (sp.toLowerCase().includes(k.toLowerCase().replace(/\s+/g,''))) {
                         supCounts[k]++;
-                        if (s.status === 'AVAILABLE') {
-                            supAvailCounts[k]++;
-                        }
+                        if (s.status === 'AVAILABLE') supAvailCounts[k]++;
                     }
                 });
             });
@@ -2729,13 +2647,9 @@ Option 3"></textarea>
             const arr = Array.isArray(specs) ? specs : specs.toString().split(',').map(sp => sp.trim());
             arr.forEach(sp => {
                 specKeys.forEach(k => {
-                    const spSan = sp.toLowerCase().replace(/\s+/g,'');
-                    const keySan = k.toLowerCase().replace(/\s+/g,'');
-                    if (spSan.includes(keySan)) {
+                    if (sp.toLowerCase().includes(k.toLowerCase().replace(/\s+/g,''))) {
                         crewCounts[k]++;
-                        if (c.status === 'AVAILABLE') {
-                            crewAvailCounts[k]++;
-                        }
+                        if (c.status === 'AVAILABLE') crewAvailCounts[k]++;
                     }
                 });
             });
@@ -2753,8 +2667,7 @@ Option 3"></textarea>
         };
         
         specKeys.forEach(k => {
-            const idPart = specMap[k
-                ] || k.replace(/\s+/g,'');
+            const idPart = specMap[k] || k.replace(/\s+/g,'');
             const supEl = document.getElementById('sup' + idPart + 'Count');
             const crewEl = document.getElementById('crew' + idPart + 'Count');
             if (supEl) supEl.textContent = `${supAvailCounts[k]}/${supCounts[k]}`;
@@ -2827,17 +2740,6 @@ Option 3"></textarea>
             });
             calendar.appendChild(cell);
         }
-        
-        const totalCells = headers.length + firstDay + daysInMonth;
-        const remainder = totalCells % 7;
-        if (remainder !== 0) {
-            const blanks = 7 - remainder;
-            for (let i = 0; i < blanks; i++) {
-                const blank = document.createElement('div');
-                blank.className = 'day other-month';
-                calendar.appendChild(blank);
-            }
-        }
     }
 
     function selectDate(dateStr) {
@@ -2893,21 +2795,14 @@ Option 3"></textarea>
             if (btnEdit) btnEdit.disabled = false;
             if (btnDup) btnDup.disabled = false;
             if (btnDel) btnDel.disabled = false;
-        } else {
-            if (infoEl) infoEl.textContent = 'Select a row';
-            if (btnEdit) btnEdit.disabled = true;
-            if (btnDup) btnDup.disabled = true;
-            if (btnDel) btnDel.disabled = true;
         }
     }
 
-    // Skills Matrix - COMPLETE IMPLEMENTATION
     async function loadSkillsMatrix() {
         const container = document.getElementById('skillsMatrixBody');
         if (!container) return;
         
         try {
-            // Load skills and employee skills from Supabase
             const [skillsResult, empSkillsResult] = await Promise.all([
                 callAPI('getSkills'),
                 callAPI('getEmployeeSkills')
@@ -2922,11 +2817,10 @@ Option 3"></textarea>
             const employeeSkills = empSkillsResult.employeeSkills || [];
             
             if (skills.length === 0) {
-                container.innerHTML = '<div class="empty">No skills defined. Click "Add Skill" to create skills.</div>';
+                container.innerHTML = '<div class="empty">No skills defined</div>';
                 return;
             }
             
-            // Combine supervisors and crew
             const allStaff = [...staffData.supervisors, ...staffData.crew];
             
             if (allStaff.length === 0) {
@@ -2934,16 +2828,13 @@ Option 3"></textarea>
                 return;
             }
             
-            // Build skills matrix table
             let html = '<table class="skills-matrix-table">';
             html += '<thead><tr>';
-            html += '<th style="min-width:150px;">Employee</th>';
-            html += '<th style="min-width:80px;">Role</th>';
+            html += '<th>Employee</th><th>Role</th>';
             skills.forEach(skill => {
-                html += `<th style="min-width:100px;">${skill.skill_name}</th>`;
+                html += `<th>${skill.skill_name}</th>`;
             });
-            html += '</tr></thead>';
-            html += '<tbody>';
+            html += '</tr></thead><tbody>';
             
             allStaff.forEach(emp => {
                 const empNum = emp.employee_number;
@@ -2952,7 +2843,7 @@ Option 3"></textarea>
                 
                 html += '<tr>';
                 html += `<td>${empName}</td>`;
-                html += `<td><span class="badge badge-${empRole === 'SUPERVISOR' ? 'info' : 'secondary'}">${empRole}</span></td>`;
+                html += `<td>${empRole}</td>`;
                 
                 skills.forEach(skill => {
                     const empSkill = employeeSkills.find(es => 
@@ -2996,7 +2887,7 @@ Option 3"></textarea>
             certifications = res.certifications || [];
         }
         
-        if (filterSelect) {
+        if (filter Select) {
             const types = new Set();
             certifications.forEach(c => {
                 const t = c.certification_type;
@@ -3155,7 +3046,6 @@ Option 3"></textarea>
         modal.classList.add('show');
     }
 
-    // Columns Manager with Drag & Drop - FIXED
     async function loadColumns() {
         if (columns.length) {
             renderColumnsTable();
@@ -3194,12 +3084,10 @@ Option 3"></textarea>
         attachColumnListeners();
     }
 
-    // FIXED: Drag & Drop implementation for columns
     function attachColumnListeners() {
         const tbody = document.getElementById('columnsTableBody');
         if (!tbody) return;
         
-        // Toggle visibility
         tbody.querySelectorAll('input[data-toggle]').forEach(input => {
             input.onchange = () => {
                 const id = parseInt(input.dataset.toggle);
@@ -3210,7 +3098,6 @@ Option 3"></textarea>
             };
         });
         
-        // Width input changes
         tbody.querySelectorAll('input[data-width]').forEach(input => {
             input.onchange = () => {
                 const id = parseInt(input.dataset.width);
@@ -3221,7 +3108,6 @@ Option 3"></textarea>
             };
         });
         
-        // Edit column button
         tbody.querySelectorAll('[data-edit-column]').forEach(btn => {
             btn.onclick = () => {
                 const id = parseInt(btn.dataset.editColumn);
@@ -3229,7 +3115,6 @@ Option 3"></textarea>
             };
         });
         
-        // Drag & Drop functionality
         const rows = tbody.querySelectorAll('.column-row');
         let draggedElement = null;
         
@@ -3264,8 +3149,6 @@ Option 3"></textarea>
             
             row.addEventListener('drop', (e) => {
                 e.preventDefault();
-                
-                // Reorder columns array based on new DOM order
                 const newOrder = Array.from(tbody.querySelectorAll('.column-row')).map(r => {
                     const idx = parseInt(r.dataset.index);
                     return columns[idx];
@@ -3282,23 +3165,7 @@ Option 3"></textarea>
     function openEditColumnModal(id) {
         const col = columns.find(c => c.id === id);
         if (!col) return;
-        
-        $('#editColumnId').value = col.id;
-        $('#editColumnName').value = col.name;
-        $('#editColumnType').value = col.type;
-        $('#editColumnWidth').value = parseInt(col.width);
-        $('#editColumnRequired').value = col.required ? 'true' : 'false';
-        $('#editColumnDescription').value = col.description || '';
-        
-        if (col.type === 'dropdown' || col.type === 'multiselect') {
-            $('#editColumnOptionsContainer').style.display = 'block';
-            $('#editColumnOptions').value = col.options ? col.options.join('\n') : '';
-        } else {
-            $('#editColumnOptionsContainer').style.display = 'none';
-            $('#editColumnOptions').value = '';
-        }
-        
-        document.getElementById('modalEditColumn').classList.add('show');
+        showNotification('Column editing coming soon', 'info');
     }
 
     async function loadCertificationEmployees() {
@@ -3315,7 +3182,6 @@ Option 3"></textarea>
         }
     }
 
-    // Users Management - COMPLETE IMPLEMENTATION
     async function loadUsers() {
         try {
             const res = await callAPI('getUsers');
@@ -3395,7 +3261,6 @@ Option 3"></textarea>
         const emailInput = document.getElementById('userEmail');
         const passwordInput = document.getElementById('userPassword');
         const roleSelect = document.getElementById('userRole');
-        const activeSelect = document.getElementById('userActive');
         
         if (user) {
             title.textContent = 'Edit User';
@@ -3404,7 +3269,6 @@ Option 3"></textarea>
             passwordInput.value = '';
             passwordInput.placeholder = 'Leave blank to keep current password';
             roleSelect.value = user.role || 'USER';
-            activeSelect.value = (user.active === false || user.active === 'false') ? 'false' : 'true';
             usernameInput.disabled = true;
             modal.dataset.editIndex = index;
         } else {
@@ -3414,7 +3278,6 @@ Option 3"></textarea>
             passwordInput.value = '';
             passwordInput.placeholder = 'Enter password';
             roleSelect.value = 'USER';
-            activeSelect.value = 'true';
             usernameInput.disabled = false;
             delete modal.dataset.editIndex;
         }
@@ -3430,7 +3293,6 @@ Option 3"></textarea>
         const email = document.getElementById('userEmail').value.trim();
         const password = document.getElementById('userPassword').value.trim();
         const role = document.getElementById('userRole').value;
-        const active = document.getElementById('userActive').value === 'true';
         
         if (!username || !email) {
             showNotification('Username and email are required', 'error');
@@ -3441,7 +3303,7 @@ Option 3"></textarea>
         
         if (editIndex !== null) {
             const oldUser = users[editIndex];
-            const payload = { username: oldUser.username, updates: { role, active } };
+            const payload = { username: oldUser.username, updates: { role, active: true } };
             if (password) payload.updates.password = password;
             if (email !== oldUser.email) payload.updates.email = email;
             
@@ -3464,7 +3326,7 @@ Option 3"></textarea>
                 return;
             }
             
-            const payload = { username, email, password, role, active };
+            const payload = { username, email, password, role, active: true };
             try {
                 const res = await callAPI('addUser', payload);
                 if (res.success) {
@@ -3525,7 +3387,636 @@ Option 3"></textarea>
         }
     }
 
-    // Utility functions
+    // ============ REPORTS ============
+    function parseHours(timeStr) {
+        if (!timeStr) return 0;
+        const str = ('' + timeStr).toUpperCase();
+        if (str.includes('8')) return 8;
+        if (str.includes('6')) return 6;
+        if (str.includes('1/2')) return 4;
+        if (str.includes('2') && !str.includes('1/2')) return 2;
+        if (str.includes('4')) return 4;
+        if (str.includes('1HR')) return 1;
+        const num = parseFloat(str);
+        return isNaN(num) ? 0 : num;
+    }
+
+    function onReportPeriodChange() {
+        const periodEl = $('#reportPeriod');
+        if (!periodEl) return;
+        const period = periodEl.value;
+        const showCustom = (period === 'custom');
+        const fromEl = $('#reportFrom');
+        const toEl = $('#reportTo');
+        if (fromEl) fromEl.style.display = showCustom ? 'block' : 'none';
+        if (toEl) toEl.style.display = showCustom ? 'block' : 'none';
+        if (!showCustom) {
+            loadReports();
+        }
+    }
+
+    async function populateReportFilters() {
+        const supSelect = $('#reportSupervisor');
+        if (supSelect) {
+            supSelect.innerHTML = '<option value="">All Supervisors</option>';
+            if (staffData && staffData.supervisors) {
+                staffData.supervisors.forEach(s => {
+                    const name = s.full_name || '';
+                    if (name) {
+                        supSelect.innerHTML += `<option value="${name}">${name}</option>`;
+                    }
+                });
+            }
+        }
+        const locSelect = $('#reportLocation');
+        if (locSelect) {
+            locSelect.innerHTML = '<option value="">All Locations</option>';
+            locSelect.innerHTML += '<option value="LOCAL">LOCAL</option>';
+            locSelect.innerHTML += '<option value="OUT OF TOWN">OUT OF TOWN</option>';
+        }
+        const statusSelect = $('#reportStatus');
+        if (statusSelect) {
+            statusSelect.innerHTML = '<option value="">All Statuses</option>';
+            REPORT_STATUS_LIST.forEach(s => {
+                statusSelect.innerHTML += `<option value="${s}">${s.replace(/_/g,' ')}</option>`;
+            });
+        }
+        const posSelect = $('#reportPosition');
+        if (posSelect) {
+            posSelect.innerHTML = '<option value="">All Positions</option>';
+            POSITION_LIST.forEach(p => {
+                posSelect.innerHTML += `<option value="${p}">${p}</option>`;
+            });
+        }
+    }
+
+    function getPeriodDates() {
+        const now = new Date();
+        const periodEl = $('#reportPeriod');
+        const period = periodEl ? periodEl.value : 'month';
+        let startDate, endDate;
+        if (period === 'today') {
+            startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            endDate = new Date(startDate);
+        } else if (period === 'week') {
+            const weekStart = new Date(now);
+            weekStart.setDate(now.getDate() - now.getDay());
+            startDate = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate());
+            endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + 6);
+        } else if (period === 'month') {
+            startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+            endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+        } else {
+            const fromVal = $('#reportFrom') ? $('#reportFrom').value : '';
+            const toVal = $('#reportTo') ? $('#reportTo').value : '';
+            startDate = fromVal ? new Date(fromVal) : new Date(now.getFullYear(), now.getMonth(), 1);
+            endDate = toVal ? new Date(toVal) : new Date(now.getFullYear(), now.getMonth() + 1, 0);
+        }
+        startDate.setHours(0,0,0,0);
+        endDate.setHours(23,59,59,999);
+        return {startDate, endDate};
+    }
+
+    async function loadReports() {
+        const {startDate, endDate} = getPeriodDates();
+        reportJobs = [];
+        const startYear = startDate.getFullYear();
+        const endYear = endDate.getFullYear();
+        const calls = [];
+        for (let year = startYear; year <= endYear; year++) {
+            const monthStart = (year === startYear ? startDate.getMonth() : 0);
+            const monthEnd = (year === endYear ? endDate.getMonth() : 11);
+            for (let m = monthStart; m <= monthEnd; m++) {
+                calls.push(callAPI('getJobs', {year: year, month: MONTH_NAMES[m]}));
+            }
+        }
+        try {
+            const results = await Promise.all(calls);
+            results.forEach(res => {
+                if (res && res.success) {
+                    reportJobs = reportJobs.concat(res.jobs || []);
+                }
+            });
+        } catch(err) {
+            reportJobs = jobs || [];
+        }
+        const supFilter = $('#reportSupervisor') ? $('#reportSupervisor').value : '';
+        const locFilter = $('#reportLocation') ? $('#reportLocation').value : '';
+        const statusFilter = $('#reportStatus') ? $('#reportStatus').value : '';
+        const posFilter = $('#reportPosition') ? $('#reportPosition').value : '';
+        reportFilteredJobs = reportJobs.filter(job => {
+            const jobDate = job.date;
+            if (!jobDate) return false;
+            const d = new Date(jobDate);
+            if (d < startDate || d > endDate) return false;
+            if (supFilter) {
+                const sups = (job.supervisor || '');
+                if (!sups.includes(supFilter)) return false;
+            }
+            if (locFilter && (job.location || '') !== locFilter) return false;
+            if (statusFilter && (job.status || '') !== statusFilter) return false;
+            if (posFilter && (job.position || '') !== posFilter) return false;
+            return true;
+        });
+        updateReportMetrics();
+        updateTrendJobs();
+        updateReportTable();
+        reportLastSync = new Date();
+        updateReportLastSync();
+    }
+
+    function updateReportMetrics() {
+        const total = reportFilteredJobs.length;
+        let completed = 0;
+        let hours = 0;
+        reportFilteredJobs.forEach(job => {
+            const prog = job.progress || '';
+            if (prog === '100%' || prog === 'COMPLETE' || prog === '100') completed++;
+            hours += parseHours(job.time);
+        });
+        const pending = total - completed;
+        const efficiency = total ? Math.round((completed / total) * 100) : 0;
+        if ($('#kpiTotalJobs')) $('#kpiTotalJobs').textContent = total;
+        if ($('#kpiCompleted')) $('#kpiCompleted').textContent = completed;
+        if ($('#kpiPending')) $('#kpiPending').textContent = pending;
+        if ($('#kpiHours')) $('#kpiHours').textContent = hours;
+        if ($('#kpiEfficiency')) $('#kpiEfficiency').textContent = efficiency + '%';
+        const progBar = document.getElementById('kpiProgressBar');
+        if (progBar) {
+            const width = total ? (completed / total * 100) : 0;
+            progBar.style.width = width + '%';
+        }
+
+        const workerStats = {};
+        let alertCount = 0;
+        reportFilteredJobs.forEach(job => {
+            const progVal = job.progress || '';
+            const notified = job.notified || '';
+            const scheduled = job.scheduled || '';
+            if (progVal === 'HOLD' || progVal === 'PUSH' || notified === 'No' || scheduled === 'No') alertCount++;
+            const names = [];
+            const supVal = job.supervisor || '';
+            if (supVal) {
+                supVal.split(',').forEach(n => {
+                    const t = n.trim();
+                    if (t) names.push(t);
+                });
+            }
+            const crewVal = job.crew || '';
+            if (crewVal) {
+                crewVal.split(',').forEach(n => {
+                    const t = n.trim();
+                    if (t) names.push(t);
+                });
+            }
+            names.forEach(name => {
+                if (!workerStats[name]) workerStats[name] = {total:0, completed:0};
+                workerStats[name].total++;
+                if (progVal === '100%' || progVal === 'COMPLETE' || progVal === '100') workerStats[name].completed++;
+            });
+        });
+        let totalEff = 0;
+        let workerCount = 0;
+        for (const name in workerStats) {
+            const ws = workerStats[name];
+            if (ws.total) {
+                totalEff += (ws.completed / ws.total);
+                workerCount++;
+            }
+        }
+        const avgEff = workerCount ? Math.round((totalEff / workerCount) * 100) : 0;
+        const avgEffEl = document.getElementById('kpiAvgEff');
+        if (avgEffEl) avgEffEl.textContent = avgEff + '%';
+        const alertEl = document.getElementById('kpiAlerts');
+        if (alertEl) alertEl.textContent = alertCount;
+
+        updateStatusDonut();
+        updateProductivityPanel();
+        updateEquipmentPanel();
+        updateFinancePanel();
+        updateHRPanel();
+        updateWeeklySummaryPanel();
+        updateAlertsPanel();
+    }
+
+    function updateTrendJobs() {
+        const container = document.getElementById('jobsTrendList');
+        if (!container) return;
+        container.innerHTML = '';
+        const {startDate, endDate} = getPeriodDates();
+        const trendMap = {};
+        reportFilteredJobs.forEach(job => {
+            const jobDate = job.date;
+            if (!jobDate) return;
+            const d = new Date(jobDate);
+            if (d < startDate || d > endDate) return;
+            const ws = new Date(d);
+            ws.setDate(d.getDate() - d.getDay());
+            ws.setHours(0,0,0,0);
+            const key = ws.toISOString().slice(0,10);
+            trendMap[key] = (trendMap[key] || 0) + 1;
+        });
+        const keys = Object.keys(trendMap).sort();
+        const counts = keys.map(k => trendMap[k]);
+        const maxCount = counts.length ? Math.max(...counts) : 0;
+        keys.forEach(k => {
+            const count = trendMap[k];
+            const item = document.createElement('div');
+            item.className = 'trend-item';
+            const barContainer = document.createElement('div');
+            barContainer.className = 'bar-container';
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            const heightPerc = maxCount ? (count / maxCount * 100) : 0;
+            bar.style.height = heightPerc + '%';
+            bar.style.background = '#f59e0b';
+            barContainer.appendChild(bar);
+            const label = document.createElement('div');
+            const dateObj = new Date(k);
+            label.textContent = (dateObj.getMonth()+1) + '/' + dateObj.getDate();
+            const val = document.createElement('div');
+            val.textContent = count;
+            item.appendChild(barContainer);
+            item.appendChild(label);
+            item.appendChild(val);
+            container.appendChild(item);
+        });
+    }
+
+    function updateReportTable() {
+        const head = document.getElementById('reportsTableHeaders');
+        const body = document.getElementById('reportsTableBody');
+        if (!head || !body) return;
+        const cols = [
+            {name:'Date', key:'date', type:'date'},
+            {name:'Job #', key:'job_number'},
+            {name:'Status', key:'status'},
+            {name:'Supervisor', key:'supervisor'},
+            {name:'Crew', key:'crew'},
+            {name:'Hours', key:'time'}
+        ];
+        head.innerHTML = cols.map(c => `<th>${c.name}</th>`).join('');
+        if (!reportFilteredJobs.length) {
+            body.innerHTML = `<tr><td colspan="${cols.length}" class="empty">No jobs found</td></tr>`;
+            return;
+        }
+        body.innerHTML = reportFilteredJobs.map(job => {
+            return '<tr>' + cols.map(c => {
+                let v = job[c.key] || '';
+                if (c.type === 'date' && v) {
+                    v = new Date(v).toLocaleDateString('en-US');
+                } else if (c.name === 'Hours') {
+                    v = parseHours(v);
+                }
+                return `<td>${v}</td>`;
+            }).join('') + '</tr>';
+        }).join('');
+    }
+
+    function updateReportLastSync() {
+        const label = document.getElementById('reportLastSync');
+        if (!label || !reportLastSync) return;
+        const now = new Date();
+        const diffMin = Math.round((now - reportLastSync) / 60000);
+        if (diffMin <= 0) {
+            label.textContent = 'Updated just now';
+        } else if (diffMin === 1) {
+            label.textContent = 'Updated 1 min ago';
+        } else {
+            label.textContent = `Updated ${diffMin} mins ago`;
+        }
+    }
+
+    function exportReports() {
+        const cols = ['Date','Job_Number','Status','Supervisor','Crew','Hours'];
+        let csv = cols.join(',') + '\n';
+        reportFilteredJobs.forEach(job => {
+            const row = [];
+            const dateVal = job.date;
+            row.push(dateVal ? new Date(dateVal).toLocaleDateString('en-US') : '');
+            row.push(job.job_number || '');
+            row.push(job.status || '');
+            row.push(job.supervisor || '');
+            row.push(job.crew || '');
+            row.push(parseHours(job.time));
+            csv += row.map(cell => {
+                const cellStr = (cell||'').toString().replace(/"/g,'""');
+                if (cellStr.includes(',') || cellStr.includes('"')) {
+                    return '"' + cellStr + '"';
+                }
+                return cellStr;
+            }).join(',') + '\n';
+        });
+        const blob = new Blob([csv], {type:'text/csv'});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'report.csv';
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function compareReports() {
+        showNotification('Compare periods feature coming soon','info');
+    }
+
+    function updateStatusDonut() {
+        const total = reportFilteredJobs.length;
+        const counts = {};
+        REPORT_STATUS_LIST.forEach(s => { counts[s] = 0; });
+        reportFilteredJobs.forEach(job => {
+            const s = job.status || '';
+            if (counts.hasOwnProperty(s)) counts[s]++;
+        });
+        const donut = document.getElementById('statusDonutChart');
+        const center = document.getElementById('statusDonutCenter');
+        const legend = document.getElementById('statusLegend');
+        if (!donut || !center || !legend) return;
+        let offset = 0;
+        const parts = [];
+        REPORT_STATUS_LIST.forEach(s => {
+            const count = counts[s];
+            const pct = total ? (count / total) : 0;
+            if (pct > 0) {
+                const startDeg = offset * 360;
+                offset += pct;
+                const endDeg = offset * 360;
+                parts.push(`${REPORT_STATUS_COLORS[s]} ${startDeg}deg ${endDeg}deg`);
+            }
+        });
+        if (parts.length === 0) {
+            donut.style.background = '#e5e7eb';
+        } else {
+            donut.style.background = `conic-gradient(${parts.join(',')})`;
+        }
+        center.textContent = total;
+        legend.innerHTML = '';
+        REPORT_STATUS_LIST.forEach(s => {
+            const count = counts[s];
+            if (typeof count === 'undefined') return;
+            const div = document.createElement('div');
+            div.className = 'legend-item';
+            div.innerHTML = `<span class="color-box" style="background:${REPORT_STATUS_COLORS[s]}"></span>${s} (${count})`;
+            div.addEventListener('click', () => {
+                const select = document.getElementById('reportStatus');
+                if (!select) return;
+                if (select.value === s) {
+                    select.value = '';
+                } else {
+                    select.value = s;
+                }
+                loadReports();
+            });
+            legend.appendChild(div);
+        });
+    }
+
+    function updateProductivityPanel() {
+        const listEl = document.getElementById('productivityList');
+        if (!listEl) return;
+        listEl.innerHTML = '';
+        const workerCounts = {};
+        reportFilteredJobs.forEach(job => {
+            const names = [];
+            const supVal = job.supervisor || '';
+            const crewVal = job.crew || '';
+            if (supVal) {
+                supVal.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
+            }
+            if (crewVal) {
+                crewVal.split(',').forEach(n => { const t = n.trim(); if (t) names.push(t); });
+            }
+            names.forEach(name => {
+                if (!workerCounts[name]) workerCounts[name] = {total:0, completed:0};
+                workerCounts[name].total++;
+                const progVal = job.progress || '';
+                if (progVal === '100%' || progVal === 'COMPLETE' || progVal === '100') workerCounts[name].completed++;
+            });
+        });
+        let arr = [];
+        for (const name in workerCounts) {
+            const info = workerCounts[name];
+            arr.push({name, total: info.total, completed: info.completed, efficiency: info.total ? info.completed / info.total : 0});
+        }
+        arr.sort((a,b) => b.total - a.total);
+        const top = arr.slice(0, 5);
+        let maxTotal = 0;
+        top.forEach(w => { if (w.total > maxTotal) maxTotal = w.total; });
+        top.forEach(w => {
+            const pct = maxTotal ? (w.total / maxTotal * 100) : 0;
+            const efficiencyPct = w.total ? Math.round(w.efficiency * 100) : 0;
+            const row = document.createElement('div');
+            row.className = 'worker-row';
+            row.innerHTML = `<span style="width:80px; overflow:hidden; text-overflow:ellipsis;" title="${w.name}">${w.name}</span>` +
+                `<div style="flex:1; margin:0 8px;"><div style="height:6px; border-radius:3px; background:#e5e7eb; overflow:hidden;"><div style="width:${pct}%; height:100%; background:#3b82f6;"></div></div></div>` +
+                `<span style="width:40px; text-align:right;">${w.total}</span><span style="margin-left:4px; font-size:10px;">(${efficiencyPct}%)</span>`;
+            listEl.appendChild(row);
+        });
+    }
+
+    function updateEquipmentPanel() {
+        const container = document.getElementById('equipmentSummary');
+        if (!container) return;
+        let total = 0, used = 0, active = 0;
+        reportFilteredJobs.forEach(job => {
+            total += parseFloat(job.mp_total) || 0;
+            used += parseFloat(job.mp_used) || 0;
+            active += parseFloat(job.mp_active) || 0;
+        });
+        const available = total - used;
+        container.innerHTML = '';
+        const summary = document.createElement('div');
+        summary.className = 'report-summary';
+        const items = [
+            {label:'Total', value: total, color:'#3b82f6'},
+            {label:'Used', value: used, color:'#ef4444'},
+            {label:'Active', value: active, color:'#f59e0b'},
+            {label:'Available', value: available, color:'#10b981'}
+        ];
+        let maxVal = 0;
+        items.forEach(it => { if (it.value > maxVal) maxVal = it.value; });
+        items.forEach(it => {
+            const row = document.createElement('div');
+            row.className = 'summary-row';
+            const label = document.createElement('span');
+            label.textContent = it.label;
+            const val = document.createElement('span');
+            val.textContent = Math.round(it.value);
+            row.appendChild(label);
+            row.appendChild(val);
+            summary.appendChild(row);
+            const barContainer = document.createElement('div');
+            barContainer.className = 'bar-container';
+            const barFill = document.createElement('div');
+            barFill.className = 'bar-fill';
+            const width = maxVal ? (it.value / maxVal * 100) : 0;
+            barFill.style.width = width + '%';
+            barFill.style.background = it.color;
+            barContainer.appendChild(barFill);
+            summary.appendChild(barContainer);
+        });
+        container.appendChild(summary);
+    }
+
+    function updateFinancePanel() {
+        const container = document.getElementById('financeSummary');
+        if (!container) return;
+        let total = 0;
+        reportFilteredJobs.forEach(job => {
+            total += parseFloat(job.change_order) || 0;
+        });
+        const avg = reportFilteredJobs.length ? (total / reportFilteredJobs.length) : 0;
+        container.innerHTML = '';
+        const summary = document.createElement('div');
+        summary.className = 'report-summary';
+        const format = val => {
+            return val.toLocaleString('en-US', {style:'currency', currency:'USD', minimumFractionDigits:2});
+        };
+        summary.innerHTML = `
+            <div class="summary-row"><span>Total Cost</span><span>${format(total)}</span></div>
+            <div class="summary-row"><span>Average per Job</span><span>${format(avg)}</span></div>
+        `;
+        container.appendChild(summary);
+    }
+
+    function updateHRPanel() {
+        const container = document.getElementById('hrSummary');
+        if (!container) return;
+        if (!staffData || !staffData.supervisors || !staffData.crew) {
+            container.textContent = 'No staff data';
+            return;
+        }
+        const totalSup = staffData.supervisors.length;
+        const totalCrew = staffData.crew.length;
+        const availableSup = staffData.supervisors.filter(s => s.status === 'AVAILABLE').length;
+        const availableCrew = staffData.crew.filter(c => c.status === 'AVAILABLE').length;
+        container.innerHTML = '';
+        const summary = document.createElement('div');
+        summary.className = 'report-summary';
+        summary.innerHTML = `
+            <div class="summary-row"><span>Total Supervisors</span><span>${totalSup}</span></div>
+            <div class="summary-row"><span>Available Supervisors</span><span>${availableSup}</span></div>
+            <div class="summary-row"><span>Total Crew</span><span>${totalCrew}</span></div>
+            <div class="summary-row"><span>Available Crew</span><span>${availableCrew}</span></div>
+        `;
+        container.appendChild(summary);
+    }
+
+    function updateWeeklySummaryPanel() {
+        const container = document.getElementById('weeklySummary');
+        if (!container) return;
+        container.innerHTML = '';
+        const counts = {};
+        reportFilteredJobs.forEach(job => {
+            const jobDate = job.date;
+            if (!jobDate) return;
+            const date = new Date(jobDate);
+            const monday = new Date(date);
+            const day = monday.getDay();
+            const diff = day === 0 ? 6 : day - 1;
+            monday.setDate(monday.getDate() - diff);
+            const key = monday.toISOString().split('T')[0];
+            counts[key] = (counts[key] || 0) + 1;
+        });
+        const entries = Object.entries(counts).sort((a,b) => new Date(a[0]) - new Date(b[0]));
+        if (!entries.length) {
+            container.textContent = 'No data';
+            return;
+        }
+        let maxCount = 0;
+        entries.forEach(([_,c]) => { if (c > maxCount) maxCount = c; });
+        entries.forEach(([weekStart, count]) => {
+            const dateObj = new Date(weekStart);
+            const label = 'Week of ' + dateObj.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+            const pct = maxCount ? (count / maxCount * 100) : 0;
+            const row = document.createElement('div');
+            row.className = 'week-item';
+            row.innerHTML = `<div style="display:flex; justify-content:space-between;"><span>${label}</span><span>${count}</span></div>` +
+                `<div class="bar-container"><div class="bar-fill" style="width:${pct}%; background:#3b82f6;"></div></div>`;
+            container.appendChild(row);
+        });
+    }
+
+    function updateAlertsPanel() {
+        const container = document.getElementById('alertsList');
+        const kpiAlerts = document.getElementById('kpiAlerts');
+        if (!container) return;
+        container.innerHTML = '';
+        const alerts = [];
+        reportFilteredJobs.forEach(job => {
+            const progVal = job.progress || '';
+            const notified = job.notified || '';
+            const scheduled = job.scheduled || '';
+            if (progVal === 'HOLD' || progVal === 'PUSH' || notified === 'No' || scheduled === 'No') {
+                alerts.push(job);
+            }
+        });
+        if (kpiAlerts) kpiAlerts.textContent = alerts.length;
+        if (!alerts.length) {
+            container.textContent = 'No alerts';
+            return;
+        }
+        alerts.forEach(job => {
+            const dateVal = job.date;
+            const dateStr = dateVal ? new Date(dateVal).toLocaleDateString('en-US') : '';
+            const status = job.status || '';
+            const row = document.createElement('div');
+            let level = 'ok';
+            const progVal = job.progress || '';
+            const notified = job.notified || '';
+            const scheduled = job.scheduled || '';
+            if (progVal === 'HOLD' || progVal === 'PUSH') level = 'critical';
+            else if (notified === 'No' || scheduled === 'No') level = 'warning';
+            row.className = `alert-item alert-${level}`;
+            row.innerHTML = `<span>${dateStr} - ${job.job_number || ''}</span><span class="badge">${status}</span>`;
+            container.appendChild(row);
+        });
+    }
+
+    async function initReportsPage() {
+        await populateReportFilters();
+        const periodEl = $('#reportPeriod');
+        if (periodEl && !periodEl.dataset.bound) {
+            periodEl.addEventListener('change', onReportPeriodChange);
+            periodEl.dataset.bound = '1';
+        }
+        ['reportSupervisor','reportLocation','reportStatus','reportPosition'].forEach(id => {
+            const el = $('#' + id);
+            if (el && !el.dataset.bound) {
+                el.addEventListener('change', loadReports);
+                el.dataset.bound = '1';
+            }
+        });
+        const fromEl = $('#reportFrom');
+        if (fromEl && !fromEl.dataset.bound) {
+            fromEl.addEventListener('change', loadReports);
+            fromEl.dataset.bound = '1';
+        }
+        const toEl = $('#reportTo');
+        if (toEl && !toEl.dataset.bound) {
+            toEl.addEventListener('change', loadReports);
+            toEl.dataset.bound = '1';
+        }
+        const refreshBtn = $('#reportRefresh');
+        if (refreshBtn && !refreshBtn.dataset.bound) {
+            refreshBtn.addEventListener('click', loadReports);
+            refreshBtn.dataset.bound = '1';
+        }
+        const exportBtn = $('#reportExport');
+        if (exportBtn && !exportBtn.dataset.bound) {
+            exportBtn.addEventListener('click', exportReports);
+            exportBtn.dataset.bound = '1';
+        }
+        const compareBtn = $('#reportCompare');
+        if (compareBtn && !compareBtn.dataset.bound) {
+            compareBtn.addEventListener('click', compareReports);
+            compareBtn.dataset.bound = '1';
+        }
+        loadReports();
+    }
+
+    // ============ UTILITY ============
     function openAddJobModal() {
         const modal = document.getElementById('modalAddJob');
         if (!modal) return;
@@ -3533,7 +4024,6 @@ Option 3"></textarea>
         const form = document.getElementById('formAddJob');
         if (form && form.reset) form.reset();
         
-        // Reset editing state
         editingRowId = null;
         editingRowIndex = null;
         
@@ -3605,11 +4095,10 @@ Option 3"></textarea>
         if (modal) modal.classList.remove('show');
     }
 
-    // Event listeners
+    // ============ EVENT LISTENERS ============
     document.addEventListener('DOMContentLoaded', () => {
         loadLocalConfig();
         
-        // Initialize theme
         const savedTheme = localStorage.getItem('opsis_theme') || 'light';
         const themeSelectEl = document.getElementById('themeSelect');
         if (themeSelectEl) {
@@ -3619,7 +4108,6 @@ Option 3"></textarea>
             });
         }
 
-        // Initialize company name
         const companyNameDisplay = document.getElementById('companyNameDisplay');
         const companyNameInput = document.getElementById('companyName');
         if (companyNameInput && companyNameDisplay) {
@@ -3633,7 +4121,6 @@ Option 3"></textarea>
             });
         }
 
-        // User management buttons - FIXED
         const addUserBtn = document.getElementById('btnAddUser');
         if (addUserBtn) {
             addUserBtn.addEventListener('click', () => {
@@ -3648,14 +4135,12 @@ Option 3"></textarea>
             });
         }
         
-        // Setup nav clicks
         document.querySelectorAll('.nav-icon').forEach(icon => {
             icon.addEventListener('click', () => {
                 switchPage(icon.dataset.page);
             });
         });
         
-        // Schedule subtabs
         document.querySelectorAll('#schedule .tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tab = btn.dataset.subtab;
@@ -3663,7 +4148,6 @@ Option 3"></textarea>
             });
         });
         
-        // Staff subtabs
         document.querySelectorAll('#staff .tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tab = btn.dataset.stafftab;
@@ -3671,14 +4155,12 @@ Option 3"></textarea>
             });
         });
 
-        // Apply page-specific border colour
         const activeIcon = document.querySelector('.nav-icon.active');
         if (activeIcon) {
             const activePage = activeIcon.dataset.page;
             if (activePage) switchPage(activePage);
         }
         
-        // Settings tabs
         document.querySelectorAll('#settings .tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tab = btn.dataset.settingstab;
@@ -3686,7 +4168,6 @@ Option 3"></textarea>
             });
         });
         
-        // FIXED: View mode buttons
         document.getElementById('viewSimple').addEventListener('click', () => {
             viewMode='simple';
             document.querySelectorAll('.search-view button').forEach(b => b.classList.remove('active'));
@@ -3706,11 +4187,9 @@ Option 3"></textarea>
             renderJobsTable();
         });
         
-        // Year/Month change
         $('#yearSelect').addEventListener('change', loadSchedule);
         $('#monthSelect').addEventListener('change', loadSchedule);
         
-        // Search jobs
         $('#searchJobs').addEventListener('input', () => {
             const term = $('#searchJobs').value.trim().toLowerCase();
             if (!term) {renderJobsTable(); return;}
@@ -3723,13 +4202,11 @@ Option 3"></textarea>
             jobs = oldJobs;
         });
         
-        // Save columns
         $('#btnSaveColumns').addEventListener('click', async () => {
             saveLocalConfig();
             showNotification('Columns saved locally!','success');
         });
         
-        // Add column
         $('#btnAddColumn').addEventListener('click', () => {
             $('#addColumnName').value = '';
             $('#addColumnType').value = 'text';
@@ -3777,12 +4254,10 @@ Option 3"></textarea>
             showNotification('Column added','success');
         });
         
-        // Add job modal
         $('#btnAddJob').addEventListener('click', () => {
             openAddJobModal();
         });
         
-        // Job form tab switching
         document.querySelectorAll('#modalAddJob [data-jobtab]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tab = btn.dataset.jobtab;
@@ -3797,7 +4272,6 @@ Option 3"></textarea>
             });
         });
         
-        // Save job
         $('#btnSaveJob').addEventListener('click', async () => {
             const form = document.getElementById('formAddJob');
             const data = Object.fromEntries(new FormData(form).entries());
@@ -3836,7 +4310,6 @@ Option 3"></textarea>
             }
         });
         
-        // Add supervisor & crew modals
         $('#btnAddSupervisor').addEventListener('click', () => {
             document.getElementById('formAddSupervisor').reset();
             document.getElementById('modalAddSupervisor').classList.add('show');
@@ -3846,7 +4319,6 @@ Option 3"></textarea>
             document.getElementById('modalAddCrew').classList.add('show');
         });
         
-        // Save supervisor
         $('#btnSaveSupervisor').addEventListener('click', async () => {
             const form = document.getElementById('formAddSupervisor');
             const data = Object.fromEntries(new FormData(form).entries());
@@ -3873,7 +4345,6 @@ Option 3"></textarea>
             }
         });
         
-        // Save crew
         $('#btnSaveCrew').addEventListener('click', async () => {
             const form = document.getElementById('formAddCrew');
             const data = Object.fromEntries(new FormData(form).entries());
@@ -3900,7 +4371,6 @@ Option 3"></textarea>
             }
         });
         
-        // Add skill modal
         $('#btnAddSkill').addEventListener('click', () => {
             document.getElementById('modalAddSkill').classList.add('show');
         });
@@ -3909,7 +4379,6 @@ Option 3"></textarea>
             document.getElementById('modalAddSkill').classList.remove('show');
         });
         
-        // Add certification modal
         $('#btnAddCertification').addEventListener('click', () => {
             loadCertificationEmployees();
             document.getElementById('modalAddCertification').classList.add('show');
@@ -3954,7 +4423,6 @@ Option 3"></textarea>
             }
         });
 
-        // Certification filter
         const filterTypeSelect = document.getElementById('certFilterType');
         if (filterTypeSelect) {
             filterTypeSelect.addEventListener('change', () => {
@@ -3962,7 +4430,6 @@ Option 3"></textarea>
             });
         }
         
-        // Certification edit modal actions
         const btnUpdateCert = document.getElementById('btnUpdateCertification');
         if (btnUpdateCert) {
             btnUpdateCert.addEventListener('click', async () => {
@@ -4021,7 +4488,6 @@ Option 3"></textarea>
             });
         }
         
-        // Modal close buttons
         document.querySelectorAll('[data-close]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const target = btn.dataset.close;
@@ -4036,24 +4502,27 @@ Option 3"></textarea>
             });
         });
         
-        // Filter buttons
         $('#btnApplyFilters').addEventListener('click', async () => {
             showNotification('Advanced filters feature coming soon','info');
         });
         $('#btnClearFilters').addEventListener('click', () => {
             $('#filterDateFrom').value = '';
             $('#filterDateTo').value = '';
-            $('#filterJobNumber').value = '';
-            $('#filterPM').value = '';
             loadSchedule();
         });
         
-        // Refresh data
         $('#btnRefresh').addEventListener('click', () => {
             refreshPage();
         });
         
-        // Row action buttons
+        $('#btnExport').addEventListener('click', () => {
+            exportSchedule();
+        });
+        
+        $('#btnAdvancedFilters').addEventListener('click', () => {
+            openScheduleFilters();
+        });
+        
         const btnEditRow = document.getElementById('btnEditRow');
         const btnDuplicateRow = document.getElementById('btnDuplicateRow');
         const btnDeleteRow = document.getElementById('btnDeleteRow');
@@ -4073,7 +4542,6 @@ Option 3"></textarea>
             });
         }
         
-        // Calendar navigation
         const prevMonthBtn = document.getElementById('prevMonth');
         const nextMonthBtn = document.getElementById('nextMonth');
         if (prevMonthBtn) {
@@ -4083,37 +4551,12 @@ Option 3"></textarea>
             nextMonthBtn.addEventListener('click', () => changeCalendarMonth(1));
         }
 
-        // Edit column save
-        $('#btnSaveColumn').addEventListener('click', () => {
-            const id = parseInt($('#editColumnId').value);
-            const col = columns.find(c => c.id === id);
-            if (!col) return;
-            col.name = $('#editColumnName').value.trim();
-            col.type = $('#editColumnType').value;
-            col.width = $('#editColumnWidth').value + 'px';
-            col.required = $('#editColumnRequired').value === 'true';
-            if (col.type === 'dropdown' || col.type === 'multiselect') {
-                const opts = $('#editColumnOptions').value.split('\n').map(o => o.trim()).filter(o => o);
-                col.options = opts;
-            } else {
-                col.options = [];
-            }
-            col.description = $('#editColumnDescription').value;
-            renderColumnsTable();
-            document.getElementById('modalEditColumn').classList.remove('show');
-            saveLocalConfig();
-            renderJobsTable();
-            showNotification('Column saved','success');
-        });
-
-        // Apply initial state
         switchPage('dashboard');
         loadSchedule();
         loadDashboard();
         loadStaff();
     });
 
-    // Expose utility functions globally
     window.openAddJobModal = openAddJobModal;
     window.openScheduleFilters = openScheduleFilters;
     window.refreshPage = refreshPage;
